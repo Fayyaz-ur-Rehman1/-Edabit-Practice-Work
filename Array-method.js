@@ -55,3 +55,49 @@ let arr20 = [3, 4, 65, 7, 78, 8, 8];
 let arr21 = arr20.findLastIndex(elm => elm > 76)
 console.log(arr21);
 
+let arr22 = [45, 6, 76.68, 878, 8787, 6];
+let arr23 = arr22.forEach(elm => console.log(elm));
+
+let a = [1, 2, 3, 5];
+// let b = a.includes(2);
+let c = a.includes(8)
+// console.log(b);
+console.log(c);
+
+let d = ['fayyaz', 'danish', 'adnan', 'shaif'];
+console.log(d.join("|"));
+
+let e = ['fayyaz', 'danish', 'adanan', 'shaif'];
+let f = e.indexOf("adanan")
+console.log(f);
+
+let g = ['hello', 'hy', 'by', 'hi'];
+let h = g.pop();
+console.log(h);
+
+let i = ['fayyaz', 'danish', 'adnan', 'shaif'];
+let j = i.reverse()
+console.log(j);
+
+let k = ['fayyaz', 'danish', 'adnan', 'shaif'];
+k.values();
+console.log(k);
+
+let l = ['fayyaz', 'danish', 'adnan', 'shaif'];
+let m = l.shift()
+console.log(m);
+
+let n = ['fayyaz', 'danish', 'adnan', 'shaif', 'ayyaz'];
+let o = n.slice(2, 4)
+console.log(o);
+
+let p = ['fayyaz', 'danish', 'adnan', 'shaif', 'ayyaz'];
+let q = p.splice(2, 1, 4)
+console.log(q);
+
+let u = ['fayyaz','danish','adnan','shaif','ayyaz'];
+let v = u.toLocaleString()
+console.log(v);
+
+let w = ['fayyaz','ffhfffd'];
+
