@@ -103,7 +103,7 @@ console.log(numArgs({}));
 // Notes
 // Don't forget to return the result.
 // If you get stuck on a challenge, find help in the Resources tab.
-// If you're really stuck, unlock solutions in the Solutions tab.
+// If you're really stuck, unlock solutions iEdabitn the Solutions tab.
 
 function invertArray(arr) {
     const res = [];
@@ -211,10 +211,11 @@ console.log(getVoteCount({ upvotes: 132, downvotes: 132 }));
 
 function reverse(arr) {
 return arr.reverse()
-     for(i = 0; i <= arr.length ; i--){
-        return arr.reverse(i)
+const res = []
+     for(i = arr.length -1; i >= 0; i--){
+        res.push(arr[i])
      }
-
+return res
 }
 console.log(reverse([1, 2, 3, 4])); 
 console.log(reverse([9, 9, 2, 3, 4])); 
@@ -272,12 +273,11 @@ console.log(arrayToString([1, 2, 3, "a", "s", "dAAAA"]));
 // Make sure to read every line carefully.
 
 function incrementItems(arr) {
-    // for (let i = 0; i < arr.length; i++) {
-    //     arr[i] = arr[i] + 1
-
-    //     return arr.map(x => x + 1 )
-    // }
-    // return arr
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = arr[i] + 1
+    }
+    return arr
+        return arr.map(x => x + 1 )
 
 }
 
@@ -314,14 +314,14 @@ console.log(b) // outputs 2
 
 function getLastItem(arr) {
     //   return  arr.pop()
-    //    return arr.at(2)
-    return arr[2]
+    //    return arr.at(-1)
+    return arr[arr.length-1]
 
 }
 
 
 console.log(getLastItem([1, 2, 3]));
-console.log(getLastItem(["cat", "dog", "duck"]));
+console.log(getLastItem(["cat", "dog", "duck", 'hello']));
 console.log(getLastItem([true, false, true])); 
 
 
@@ -336,6 +336,10 @@ console.log(getLastItem([true, false, true]));
 
 
 function concat(arr1, arr2) {
+const res = [];
+arr1.forEach(eachElement => res.push(eachElement));
+arr2.forEach(eachElement => res.push(eachElement));
+const newArr = [...arr1, ...arr2]
 //     return arr1.concat(arr2)
 }
 
@@ -353,7 +357,7 @@ console.log(concat([7, 8], [10, 9, 1, 1, 2]));
 
 
 function findIndex(arr1 , arr2){
-    return arr1.indexOf(arr2)
+return arr1.indexOf(arr2)
 }
 console.log(findIndex(["hi", "edabit", "fgh", "abc"], "fgh")); 
 console.log(findIndex(["Red", "blue", "Blue", "Green"], "blue")); 
@@ -370,8 +374,8 @@ console.log(findIndex(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"));
 // Math.floor() can be helpful.
 
 function valueAt(num1 , num2) {
-    // return num1.at(num2)
-    // return num1[Math.floor(num2)]
+return num1.at(num2)
+return num1[Math.floor(num2)]
 }
 
 console.log(valueAt([1, 2, 3, 4, 5, 6], 10 / 2));
@@ -392,7 +396,15 @@ console.log(valueAt([1, 2, 3, 4], 6.535355314 / 2));
 
 
 function search(num, num2) {
-    return num.indexOf(num2)
+    for (let i = 0; i < num.length; i++) {
+        const currentElement = num[i];
+        if (currentElement === num2) {
+            return i;
+        }
+
+    }
+    return -1
+    return num.indexOf(num2);
 }
 
 console.log(search([1, 5, 3], 5));
@@ -477,8 +489,7 @@ console.log(check([], 5));
 // Return [] if array is empty.
 
 function parseArray(arr) {
-     arr.join(' ')
-     return arr += []
+     return arr.map(eachElement => String(eachElement));
 }
 
 console.log(parseArray([1, 2, "a", "b"]));
@@ -499,7 +510,7 @@ console.log(parseArray([]));
 
 
 function toNumberArray(arr1) {
-    return 
+    return arr1.map(eachElement => Number(eachElement));
 }
 
 console.log(toNumberArray(["9.4", "4.2"]));
@@ -516,13 +527,16 @@ console.log(toNumberArray(["9.5", "8.8"]));
 // fiftyThirtyTwenty(13450) ➞ { "Needs": 6725, "Wants": 4035, "Savings": 2690 }
 
 
-function fiftyThirtyTwenty(obj){
-   return
+function fiftyThirtyTwenty(income){
+    const needs = (income * 50)/ 100;
+    const wants = (income * 30)/ 100;
+    const savings = (income * 20)/ 100;
+   return {Needs: needs, Wants: wants, Savings: savings};
 }
 
-console.log(fiftyThirtyTwenty(10000)); //➞ { "Needs": 5000, "Wants": 3000, "Savings": 2000 }
-console.log(fiftyThirtyTwenty(50000)); //➞ { "Needs": 25000, "Wants": 15000, "Savings": 10000 }
-console.log(fiftyThirtyTwenty(13450)); //➞ { "Needs": 6725, "Wants": 4035, "Savings": 2690 }
+console.log(fiftyThirtyTwenty(10000)); 
+console.log(fiftyThirtyTwenty(50000)); 
+console.log(fiftyThirtyTwenty(13450)); 
 
 
 
@@ -546,10 +560,11 @@ console.log(fiftyThirtyTwenty(13450)); //➞ { "Needs": 6725, "Wants": 4035, "Sa
 // The arrays will always be three elements long.
 // The first piece of bread on one sandwich must be the same as the first piece of bread on the other sandwich. The same goes for the last piece of bread.
 
-// function hasSameBread(arr1 , arr2) {
-//     return arr1.
-// }
+function hasSameBread(arr1 , arr2) {
+//    return arr1[0] === arr2[0] && arr1[arr1.length - 1] === arr2[arr2.length - 1];
+return  arr1.at(0) === arr2.at(0) && arr1.at(-1) === arr2.at(-1)
 
+}
 console.log(hasSameBread(["white bread", "lettuce", "white bread"], ["white bread", "tomato", "white bread"]))
 console.log(hasSameBread(["brown bread", "chicken", "brown bread"], ["white bread", "chicken", "white bread"]))
 console.log(hasSameBread(["toast", "cheese", "toast"], ["brown bread", "cheese", "toast"]))
@@ -567,8 +582,14 @@ console.log(hasSameBread(["toast", "cheese", "toast"], ["brown bread", "cheese",
 // Check the Resources tab for help if needed.
 // Remember Arrays & Null in JS are treated as object, hence the examples
 
-function arrayValuesTypes(x){
-    
+function arrayValuesTypes(x) {
+    return x.map(eachelemetn => typeof eachelemetn);
+    let arr = [];
+    for (i = 0; i < x.length;  i++) {
+      const eleType =  typeof x[i]
+      arr.push(eleType)
+    }
+    return arr
 }
 
 console.log(arrayValuesTypes([1, 2, "null", []]));
@@ -580,3 +601,5 @@ var [head, tail] = [1, 2, 3, 4]
 
 console.log(head) // outputs  1
 console.log(tail) // outputs 2
+
+
