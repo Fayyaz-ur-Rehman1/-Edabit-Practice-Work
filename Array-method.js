@@ -98,6 +98,3 @@ console.log(q);
 let u = ['fayyaz','danish','adnan','shaif','ayyaz'];
 let v = u.toLocaleString()
 console.log(v);
-
-let w = ['fayyaz','ffhfffd'];
-
