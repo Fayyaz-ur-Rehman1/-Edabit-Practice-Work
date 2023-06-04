@@ -274,26 +274,3 @@ function wordLengths(arr) {
 console.log(wordLengths(["hello", "world"]));
 console.log(wordLengths(["Halloween", "Thanksgiving", "Christmas"]));
 console.log(wordLengths(["She", "sells", "seashells", "down", "by", "the", "seashore"])); 
-
-
-// Create a function that returns the selected filename from a path. Include the extension in your answer.
-// Examples
-// getFilename("C:/Projects/pil_tests/ascii/edabit.txt") ➞ "edabit.txt"
-// getFilename("C:/Users/johnsmith/Music/Beethoven_5.mp3") ➞ "Beethoven_5.mp3"
-// getFilename("ffprobe.exe") ➞ "ffprobe.exe"
-// Notes
-// Tests will include both absolute and relative paths.
-// For simplicity, all paths will include forward slashes.
-
-function getFilename(str) {
-  let lstI = str.lastIndexOf("/")
-  let str1 = ""
-  for(let i = 0 ; i < lstI.length ; i++ ){
-    str1 += lstI[i].pop()
-  }
-  return str1
-}
-
-console.log(getFilename("C:/Projects/pil_tests/ascii/edabit.txt"));
-console.log(getFilename("C:/Users/johnsmith/Music/Beethoven_5.mp3"));
-console.log(getFilename("ffprobe.exe")); 
