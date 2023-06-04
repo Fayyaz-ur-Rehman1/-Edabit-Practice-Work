@@ -9,7 +9,7 @@ for (n = 2; n <= 2; n++) {
 }
 
 const n = 2;
-for(i = 1 ; i <= 10 ; i++){
+for (i = 1; i <= 10; i++) {
     console.log(i * n);
 }
 
@@ -141,7 +141,7 @@ function getFirstValue(arr) {
 
 console.log(getFirstValue([1, 2, 3]));
 console.log(getFirstValue([80, 5, 100]));
-console.log(getFirstValue([-500, 0, 50])); 
+console.log(getFirstValue([-500, 0, 50]));
 
 
 // Given two arguments, return an array which contains these two arguments.
@@ -174,15 +174,15 @@ console.log(makePair(512124, 215));
 // Do not attempt to import lodash; you are simply writing your own version.
 // This entire series of challenges can be found here.
 
-function drop(num1,num2) {
-//  return   num1.slice(num2)
-return num1.splice(num2)
+function drop(num1, num2) {
+    //  return   num1.slice(num2)
+    return num1.splice(num2)
 }
 
 console.log(drop([1, 2, 3], 1));
 console.log(drop([1, 2, 3], 2));
 console.log(drop([1, 2, 3], 5));
-console.log(drop([1, 2, 3], 0)); 
+console.log(drop([1, 2, 3], 0));
 
 // Given an object containing counts of both upvotes and downvotes, return what vote count should be displayed. This is calculated by subtracting the number of downvotes from upvotes.
 // Examples
@@ -210,25 +210,25 @@ console.log(getVoteCount({ upvotes: 132, downvotes: 132 }));
 // If you're really stuck, unlock solutions in the Solutions tab.
 
 function reverse(arr) {
-return arr.reverse()
-const res = []
-     for(i = arr.length -1; i >= 0; i--){
+    return arr.reverse()
+    const res = []
+    for (i = arr.length - 1; i >= 0; i--) {
         res.push(arr[i])
-     }
-return res
+    }
+    return res
 }
-console.log(reverse([1, 2, 3, 4])); 
-console.log(reverse([9, 9, 2, 3, 4])); 
-console.log(reverse([])); 
+console.log(reverse([1, 2, 3, 4]));
+console.log(reverse([9, 9, 2, 3, 4]));
+console.log(reverse([]));
 
-map 
+map
 filter
-reduce 
-some 
+reduce
+some
 every
 
 
-const number = [1,4,9];
+const number = [1, 4, 9];
 const roots = number.map(num => Math.sqrt(num));
 console.log(roots);
 
@@ -261,7 +261,7 @@ function arrayToString(str) {
 
 console.log(arrayToString([1, 2, 3, 4, 5, 6]));
 console.log(arrayToString(["a", "b", "c", "d", "e", "f"]));
-console.log(arrayToString([1, 2, 3, "a", "s", "dAAAA"])); 
+console.log(arrayToString([1, 2, 3, "a", "s", "dAAAA"]));
 
 
 // Help fix all the bugs in the function incrementItems! It is intended to add 1 to every element in the array!
@@ -277,13 +277,13 @@ function incrementItems(arr) {
         arr[i] = arr[i] + 1
     }
     return arr
-        return arr.map(x => x + 1 )
+    return arr.map(x => x + 1)
 
 }
 
 console.log(incrementItems([0, 1, 2, 3]));
 console.log(incrementItems([2, 4, 6, 8]));
-console.log(incrementItems([-1, -2, -3, -4])); 
+console.log(incrementItems([-1, -2, -3, -4]));
 
 // You can assign variables from arrays like this:
 // const arr = [1, 2, 3, 4, 5, 6]
@@ -315,14 +315,14 @@ console.log(b) // outputs 2
 function getLastItem(arr) {
     //   return  arr.pop()
     //    return arr.at(-1)
-    return arr[arr.length-1]
+    return arr[arr.length - 1]
 
 }
 
 
 console.log(getLastItem([1, 2, 3]));
 console.log(getLastItem(["cat", "dog", "duck", 'hello']));
-console.log(getLastItem([true, false, true])); 
+console.log(getLastItem([true, false, true]));
 
 
 // Create a function to concatenate two integer arrays.
@@ -336,16 +336,16 @@ console.log(getLastItem([true, false, true]));
 
 
 function concat(arr1, arr2) {
-const res = [];
-arr1.forEach(eachElement => res.push(eachElement));
-arr2.forEach(eachElement => res.push(eachElement));
-const newArr = [...arr1, ...arr2]
-//     return arr1.concat(arr2)
+    const res = [];
+    arr1.forEach(eachElement => res.push(eachElement));
+    arr2.forEach(eachElement => res.push(eachElement));
+    const newArr = [...arr1, ...arr2]
+    //     return arr1.concat(arr2)
 }
 
 console.log(concat([1, 3, 5], [2, 6, 8]));
 console.log(concat([4, 5, 1], [3, 3, 3, 3, 3]));
-console.log(concat([7, 8], [10, 9, 1, 1, 2])); 
+console.log(concat([7, 8], [10, 9, 1, 1, 2]));
 
 
 // Create a function that takes an array and a string as arguments and returns the index of the string.
@@ -356,13 +356,13 @@ console.log(concat([7, 8], [10, 9, 1, 1, 2]));
 // findIndex(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple") ➞ 0
 
 
-function findIndex(arr1 , arr2){
-return arr1.indexOf(arr2)
+function findIndex(arr1, arr2) {
+    return arr1.indexOf(arr2)
 }
-console.log(findIndex(["hi", "edabit", "fgh", "abc"], "fgh")); 
-console.log(findIndex(["Red", "blue", "Blue", "Green"], "blue")); 
-console.log(findIndex(["a", "g", "y", "d"], "d")); 
-console.log(findIndex(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple")); 
+console.log(findIndex(["hi", "edabit", "fgh", "abc"], "fgh"));
+console.log(findIndex(["Red", "blue", "Blue", "Green"], "blue"));
+console.log(findIndex(["a", "g", "y", "d"], "d"));
+console.log(findIndex(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"));
 
 
 // Given an index and an array, return the value of the array with the given index.
@@ -373,14 +373,14 @@ console.log(findIndex(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"));
 // Notes
 // Math.floor() can be helpful.
 
-function valueAt(num1 , num2) {
-return num1.at(num2)
-return num1[Math.floor(num2)]
+function valueAt(num1, num2) {
+    return num1.at(num2)
+    return num1[Math.floor(num2)]
 }
 
 console.log(valueAt([1, 2, 3, 4, 5, 6], 10 / 2));
 console.log(valueAt([1, 2, 3, 4, 5, 6], 8.0 / 2));
-console.log(valueAt([1, 2, 3, 4], 6.535355314 / 2)); 
+console.log(valueAt([1, 2, 3, 4], 6.535355314 / 2));
 
 
 // Create a function that finds the index of a given item.
@@ -430,7 +430,7 @@ function sumArray(arr) {
     // }
     // return sum
 
-    return arr.reduce(function (a , b) {
+    return arr.reduce(function (a, b) {
         return a + b
     })
 }
@@ -449,12 +449,12 @@ console.log(sumArray([0, 4, 8, 12]))
 // The given array is ordered.
 
 function search(num1, num2) {
-return num1.indexOf(num2)
+    return num1.indexOf(num2)
 
 }
 console.log(search([1, 2, 3, 4], 3));
 console.log(search([2, 4, 6, 8, 10], 8));
-console.log(search([1, 3, 5, 7, 9], 11)); 
+console.log(search([1, 3, 5, 7, 9], 11));
 
 
 
@@ -473,10 +473,10 @@ function check(num1, num2) {
     return num1.includes(num2)
 }
 
-console.log(check([1, 2, 3, 4, 5], 3)); 
-console.log(check([1, 1, 2, 1, 1], 3)); 
-console.log(check([5, 5, 5, 6], 5)); 
-console.log(check([], 5)); 
+console.log(check([1, 2, 3, 4, 5], 3));
+console.log(check([1, 1, 2, 1, 1], 3));
+console.log(check([5, 5, 5, 6], 5));
+console.log(check([], 5));
 
 
 // Create a function that takes an array of integers and strings. Convert integers to strings and return the new array.
@@ -489,13 +489,13 @@ console.log(check([], 5));
 // Return [] if array is empty.
 
 function parseArray(arr) {
-     return arr.map(eachElement => String(eachElement));
+    return arr.map(eachElement => String(eachElement));
 }
 
 console.log(parseArray([1, 2, "a", "b"]));
 console.log(parseArray(["abc", 123, "def", 456]));
 console.log(parseArray([1, 2, 3, 17, 24, 3, "a", "123b"]));
-console.log(parseArray([])); 
+console.log(parseArray([]));
 
 
 // Create a function that takes as a parameter an array of "stringified" numbers and returns an array of numbers.
@@ -515,7 +515,7 @@ function toNumberArray(arr1) {
 
 console.log(toNumberArray(["9.4", "4.2"]));
 console.log(toNumberArray(["91", "44"]));
-console.log(toNumberArray(["9.5", "8.8"])); 
+console.log(toNumberArray(["9.5", "8.8"]));
 
 
 
@@ -527,16 +527,16 @@ console.log(toNumberArray(["9.5", "8.8"]));
 // fiftyThirtyTwenty(13450) ➞ { "Needs": 6725, "Wants": 4035, "Savings": 2690 }
 
 
-function fiftyThirtyTwenty(income){
-    const needs = (income * 50)/ 100;
-    const wants = (income * 30)/ 100;
-    const savings = (income * 20)/ 100;
-   return {Needs: needs, Wants: wants, Savings: savings};
+function fiftyThirtyTwenty(income) {
+    const needs = (income * 50) / 100;
+    const wants = (income * 30) / 100;
+    const savings = (income * 20) / 100;
+    return { Needs: needs, Wants: wants, Savings: savings };
 }
 
-console.log(fiftyThirtyTwenty(10000)); 
-console.log(fiftyThirtyTwenty(50000)); 
-console.log(fiftyThirtyTwenty(13450)); 
+console.log(fiftyThirtyTwenty(10000));
+console.log(fiftyThirtyTwenty(50000));
+console.log(fiftyThirtyTwenty(13450));
 
 
 
@@ -560,9 +560,9 @@ console.log(fiftyThirtyTwenty(13450));
 // The arrays will always be three elements long.
 // The first piece of bread on one sandwich must be the same as the first piece of bread on the other sandwich. The same goes for the last piece of bread.
 
-function hasSameBread(arr1 , arr2) {
-//    return arr1[0] === arr2[0] && arr1[arr1.length - 1] === arr2[arr2.length - 1];
-return  arr1.at(0) === arr2.at(0) && arr1.at(-1) === arr2.at(-1)
+function hasSameBread(arr1, arr2) {
+    //    return arr1[0] === arr2[0] && arr1[arr1.length - 1] === arr2[arr2.length - 1];
+    return arr1.at(0) === arr2.at(0) && arr1.at(-1) === arr2.at(-1)
 
 }
 console.log(hasSameBread(["white bread", "lettuce", "white bread"], ["white bread", "tomato", "white bread"]))
@@ -585,9 +585,9 @@ console.log(hasSameBread(["toast", "cheese", "toast"], ["brown bread", "cheese",
 function arrayValuesTypes(x) {
     return x.map(eachelemetn => typeof eachelemetn);
     let arr = [];
-    for (i = 0; i < x.length;  i++) {
-      const eleType =  typeof x[i]
-      arr.push(eleType)
+    for (i = 0; i < x.length; i++) {
+        const eleType = typeof x[i]
+        arr.push(eleType)
     }
     return arr
 }
