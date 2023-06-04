@@ -132,6 +132,37 @@ console.log(getFilename("C:/Projects/pil_tests/ascii/edabit.txt"));
 console.log(getFilename("C:/Users/johnsmith/Music/Beethoven_5.mp3"));
 console.log(getFilename("ffprobe.exe"));
 
+// 6}
+
+// According to the lodash documentation, _.fill Fills elements of an array with the value from start to, but not including, end. Note that this method mutates the array.
+
+// This challenge requires you to write your own version of this function without using lodash so that you can better understand it works.
+
+// Arguments
+// array (Array): The array to fill.
+// value (*): The value to fill array with.
+// [start=0] (number): The start position.
+// [end=array.length] (number): The end position.
+
+
+// var array = [1, 2, 3]
+// fill(array, "a") ➞ ["a", "a", "a"]
+// fill(Array(3), 2) ➞ [2, 2, 2]
+// fill([4, 6, 8, 10], "*", 1, 3) ➞ [4, "*", "*", 10]
+
+
+
+function fill(arr, value, start = 0, end = arr.length) {
+   for (let i = start; i < end; i++) {
+      arr[i] = value
+   }
+   return arr
+}
+
+console.log(fill([1, 2, 3], "a"));
+console.log(fill(Array(3), 2));
+console.log(fill([4, 6, 8, 10], "*", 1, 3));
+
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -164,7 +195,7 @@ function myblurfn() {
 }
 
 
-// Append
+// // Append
 
 let add = document.getElementById("intro");
 let eml = document.createElement("h1");
@@ -194,7 +225,7 @@ console.log(eml3);
 console.log(eml3.textContent);
 
 
-// scroll Event
+// // scroll Event
 
 window.addEventListener("scroll", function () {
    console.log("page is scrolling");
