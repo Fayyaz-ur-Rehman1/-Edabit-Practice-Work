@@ -165,9 +165,12 @@ for (css of box.classList) {
 // Delegation Event
 
 
+Bublling
+
 let bubbling1 = document.querySelector(".child");
-bubbling1.addEventListener('click', function () {
+bubbling1.addEventListener('click', function (event) {
     console.log("child Click");
+    event.stopPropagation()
 }, false)
 
 let bubbling2 = document.querySelector(".parent")
@@ -180,6 +183,7 @@ bubbling3.addEventListener("click", function () {
     console.log("grandprent Click");
 }, false)
 
+// Capturing
 
 let capturing1 = document.querySelector(".child");
 capturing1.addEventListener("click", function () {
@@ -187,8 +191,9 @@ capturing1.addEventListener("click", function () {
 }, true);
 
 let capturing2 = document.querySelector(".parent");
-capturing2.addEventListener("click", function () {
+capturing2.addEventListener("click", function (event) {
     console.log("parent click");
+
 }, true);
 
 let capturing3 = document.addEventListener("click", function () {
