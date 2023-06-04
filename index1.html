@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+
+    <style>
+        /* .color {
+            background-color: grey;
+            color: black;
+        }
+
+        .dim {
+            border: 1px solid red;
+            padding: 100px;
+        } */
+
+        .grandparent {
+            background-color: black;
+            margin: 150px;
+            padding: 50px;
+            width: 700px;
+        }
+
+        .parent {
+            background-color: bisque;
+            margin: 100px;
+            padding: 40px;
+        }
+
+        .child {
+            background-color: yellow;
+            margin: 50px;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">i am mouse down</button>
+    <button id="btn1">i am mouse up</button>
+    <button id="btn2">i am keyup</button>
+    <button id="btn3">i am keydown</button>
+    <button id="btn4">i am keypress</button>
+    <button id="btn11">Multiple Event</button>
+    <button id="btn12">Remove Listner</button>
+
+    <ul>
+        <li class="qurey"></li>
+        <li class="cl"></li>
+        <li class="qurey"></li>
+        <li class="cl"></li>
+    </ul>
+
+    <ul class="name">
+        <li class="first"></li>
+        <li class="first"></li>
+        <li class="first"></li>
+    </ul>
+    <div>
+        <h3>i am very good boy</h3>
+        <h3>hello guys </h3>
+        <p>asslamualikum</p>
+        <h3>asslamualikum</h3>
+    </div>
+
+    <div id="box" class="color dim">
+        <p>i am p tag</p>
+    </div>
+
+    <div class="grandparent">
+        <div class="parent">
+            <div class="child">
+                <h1>Event Delegation</h1>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./day4.js"></script>
+
+</html>
