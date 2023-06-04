@@ -132,3 +132,117 @@ console.log(getFilename("C:/Projects/pil_tests/ascii/edabit.txt"));
 console.log(getFilename("C:/Users/johnsmith/Music/Beethoven_5.mp3"));
 console.log(getFilename("ffprobe.exe"));
 
+
+
+//////////////////////////////////////////////////////////////////////////
+
+
+// DOM Part 
+
+// input change blur focus
+
+let fbnc = document.getElementById("fbnc");
+
+fbnc.addEventListener("focus", myfocusfn);
+fbnc.addEventListener("blur", myblurfn);
+
+fbnc.addEventListener("input", function () {
+   console.log(this.value);
+})
+
+fbnc.addEventListener("change", function () {
+   console.log(this.value);
+})
+
+function myfocusfn() {
+   fbnc.style.background = "black"
+   fbnc.style.color = "white"
+}
+
+function myblurfn() {
+   fbnc.style.background = "green"
+}
+
+
+// Append
+
+let add = document.getElementById("intro");
+let eml = document.createElement("h1");
+eml.className = "heading";
+eml.textContent = "hello People";
+add.appendChild(eml);
+
+let add1 = document.getElementById("intro");
+let eml1 = document.createElement("p");
+eml1.className = "pragraph"
+let text = document.createTextNode("Animals are multicellular, eukaryotic organisms in the biological kingdom Animalia. With few exceptions, animals consume organic material, breathe oxygen, are able to move, can reproduce sexually, and grow from a hollow sphere of cells, the blastula, during embryonic development. As of 2022, 2.16 million living animal species have been described—of which around 1.05 million are insects, over 85,000 are molluscs, and around 65,000 are vertebrates—but it has been estimated there are around 7.77 million animal species in total. Animals range in length from 8.5 micrometres (0.00033 in) to 33.6 metres (110 ft). They have complex interactions with each other and their environments, forming intricate food webs. The scientific study of animals is known as zoology.Most living animal species are in Bilateria, a clade whose members have a bilaterally symmetric body plan. The Bilateria include the protostomes, containing animals such as nematodes, arthropods, flatworms, annelids and molluscs, and the deuterostomes, containing the echinoderms and the chordates, the latter including the vertebrates. Life forms interpreted as early animals were present in the Ediacaran biota of the late Precambrian. Many modern animal phyla became clearly established in the fossil record as marine species during the Cambrian explosion, which began around 539 million years ago. 6,331 groups of genes common to all living animals have been identified; these may have arisen from a single common ancestor that lived 650 million years ago.")
+eml1.appendChild(text);
+add1.appendChild(eml1)
+
+
+let add2 = document.getElementById("intro");
+let eml2 = document.createElement("pre");
+add2.append(eml2)
+console.log(eml2);
+
+let add3 = document.getElementById("intro");
+let eml3 = document.createElement("pre");
+eml3.id = "preserves";
+eml3.textContent = "i am a        preserves tag"
+add3.append(eml3);
+console.log(eml3);
+console.log(eml3.textContent);
+
+
+// scroll Event
+
+window.addEventListener("scroll", function () {
+   console.log("page is scrolling");
+})
+
+window.addEventListener("wheel", function (event) {
+   if (event.deltaY < 0) {
+      console.log("Scrolling is up..........");
+   } else if (event.deltaY > 0) {
+      console.log("Scrolling is down...");
+   }
+})
+
+window.addEventListener("wheel", function (event) {
+   if (event.deltaX < 0) {
+      console.log("scrolling left side...");
+   } else if (event.deltaX > 0) {
+      console.log("scrolling rigth side....");
+   }
+})
+
+window.addEventListener("scroll", function () {
+   if (window.pageYOffset > 500) {
+      document.body.style.background = "green"
+   } else {
+      document.body.style.background = "yellow"
+   }
+})
+
+window.addEventListener("scroll", function () {
+   if (window.pageXOffset > 500) {
+      document.body.style.background = "pink"
+   }
+})
+
+
+// Prevent default
+
+let link = document.querySelector(".anchor");
+
+link.addEventListener('click', function (event) {
+   event.preventDefault();
+   console.log("click me");
+})
+
+let submit = document.querySelector(".submit");
+submit.addEventListener("click", function (event) {
+   event.preventDefault();
+   console.log("submit button");
+})
+
