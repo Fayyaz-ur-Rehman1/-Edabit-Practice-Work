@@ -350,3 +350,115 @@ console.log(concat1([4, 5, 1], [3, 3, 3, 3, 3]));
 
 
 // 7}
+// Create a function that takes an array and a string as arguments and returns the index of the string.
+// Examples
+// findIndex(["hi", "edabit", "fgh", "abc"], "fgh") ➞ 2
+// findIndex(["Red", "blue", "Blue", "Green"], "blue") ➞ 1
+// findIndex(["a", "g", "y", "d"], "d") ➞ 3
+// findIndex(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple") ➞ 0
+
+
+function findIndex(arr, word) {
+    for (let i = 0; i < arr.length; i++) {
+        const currentElement = arr[i];
+        if (currentElement === word) {
+            return i
+        }
+    }
+    return -1
+}
+
+function findIndex1(arr, word) {
+    //  return arr.indexOf(word)
+    return arr.lastIndexOf(word)
+}
+
+console.log(findIndex1(["hi", "edabit", "fgh", "abc"], "fgh"));
+console.log(findIndex1(["Red", "blue", "Blue", "Green"], "blue"));
+console.log(findIndex1(["a", "g", "y", "d"], "d"));
+console.log(findIndex1(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"));
+
+console.log(findIndex(["hi", "edabit", "fgh", "abc"], "fgh"));
+console.log(findIndex(["Red", "blue", "Blue", "Green"], "blue"));
+console.log(findIndex(["a", "g", "y", "d"], "d"));
+console.log(findIndex(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"));
+
+// 8}  
+
+// Given an index and an array, return the value of the array with the given index.
+// Examples
+// valueAt([1, 2, 3, 4, 5, 6], 10 / 2) ➞ 6
+// valueAt([1, 2, 3, 4, 5, 6], 8.0 / 2) ➞ 5
+// valueAt([1, 2, 3, 4], 6.535355314 / 2) ➞ 4
+// Notes
+// Math.floor() can be helpful.
+
+function valueAt(arr, index) {
+
+    //     for (let i = Math.floor(index); i < arr.length; i++) {
+    //         return arr[i]
+    //     }
+
+
+}
+
+console.log(valueAt([1, 2, 3, 4, 5, 6], 10 / 2));
+console.log(valueAt([1, 2, 3, 4, 5, 6], 8.0 / 2));
+console.log(valueAt([1, 2, 3, 4], 6.535355314 / 2));
+
+
+function valueAt1(arr, word) {
+    const currentIndex = Math.floor(word)
+    return arr[currentIndex]
+    // return arr.at(word)
+}
+
+console.log(valueAt1([1, 2, 3, 4, 5, 6], 10 / 2));
+console.log(valueAt1([1, 2, 3, 4, 5, 6], 8.0 / 2));
+console.log(valueAt1([1, 2, 3, 4], 6.535355314 / 2));
+
+
+// 9}
+// Create a function that finds the index of a given item.
+// Examples
+// search([1, 5, 3], 5) ➞ 1
+// search([9, 8, 3], 3) ➞ 2
+// search([1, 2, 3], 4) ➞ -1
+// Notes
+// If the item is not present, return -1.
+
+function search(arr, index) {
+    for (let i = 0; i < arr.length; i++) {
+        const currentElement = arr[i];
+        if (currentElement === index) {
+            return i
+        }
+    }
+    return -1
+}
+
+console.log(search([1, 5, 3], 5));
+console.log(search([9, 8, 3], 3));
+console.log(search([1, 2, 3], 4));
+
+function search1(arr, index) {
+    return arr.indexOf(index)
+}
+console.log(search1([1, 5, 3], 5));
+console.log(search1([9, 8, 3], 3));
+console.log(search1([1, 2, 3], 4));
+
+
+// 10} 
+
+function sumArray(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]
+    }
+    return sum
+}
+
+console.log(sumArray([1, 2, 3, 4, 5]));
+console.log(sumArray([-1, 0, 1]));
+console.log(sumArray([0, 4, 8, 12])); 
