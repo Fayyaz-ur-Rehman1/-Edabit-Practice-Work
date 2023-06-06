@@ -373,4 +373,127 @@ function toNumberArray(arr) {
 
 console.log(toNumberArray(["9.4", "4.2"]));
 console.log(toNumberArray(["91", "44"]));
-console.log(toNumberArray(["9.5", "8.8"])); 
+console.log(toNumberArray(["9.5", "8.8"]));
+
+// 16}
+
+// Create a function that takes an array and returns the types of values (data types) in a new array.
+// Examples
+// arrayValuesTypes([1, 2, "null", []])
+// ➞ ["number", "number", "string", "object"]
+// arrayValuesTypes(["214", true, false, 2, 2.15, [], null])
+// ➞ ["string", "boolean", "boolean", "number", "number", "object", "object"]
+// arrayValuesTypes([21.1, "float", "array", ["I am array"], null, true, 214])
+// ➞ ["number", "string", "string", "object", "object", "boolean", "number"]
+
+function arrayValuesTypes(arr) {
+    let main = [];
+    for (let i = 0; i < arr.length; i++) {
+        main.push(typeof arr[i])
+    }
+    return main
+}
+
+console.log(arrayValuesTypes([1, 2, "null", []]));
+console.log(arrayValuesTypes(["214", true, false, 2, 2.15, [], null]));
+console.log(arrayValuesTypes([21.1, "float", "array", ["I am array"], null, true, 214]));
+
+// 17}
+
+// Given two arrays, which represent two sandwiches, return whether both sandwiches use the same type of bread. The bread will always be found at the start and end of the array.
+
+// Examples
+// hasSameBread(
+//   ["white bread", "lettuce", "white bread"],
+//   ["white bread", "tomato", "white bread"]
+// ) ➞ true
+
+// hasSameBread(
+//   ["brown bread", "chicken", "brown bread"],
+//   ["white bread", "chicken", "white bread"]
+// ) ➞ false
+
+// hasSameBread(
+//   ["toast", "cheese", "toast"],
+//   ["brown bread", "cheese", "toast"]
+// ) ➞ false
+
+
+// 18}
+
+function hasSameBread(arr, arr1) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === arr || arr[i] === "white bread") {
+            return true
+        }
+    }
+    return false
+}
+
+console.log(hasSameBread(
+    ["white bread", "lettuce", "white bread"],
+    ["white bread", "tomato", "white bread"]
+));
+
+console.log(hasSameBread(
+    ["brown bread", "chicken", "brown bread"],
+    ["white bread", "chicken", "white bread"]
+));
+
+console.log(hasSameBread(
+    ["toast", "cheese", "toast"],
+    ["brown bread", "cheese", "toast"]
+));
+
+// 19
+
+// Create a function that takes an array of two numbers and checks if the square root of the first number is equal to the cube root of the second number.
+// Examples
+// checkSquareAndCube([4, 8]) ➞ true
+// checkSquareAndCube([16, 48]) ➞ false
+// checkSquareAndCube([9, 27]) ➞ true
+
+function checkSquareAndCube(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (Math.sqrt(arr[0]) === Math.cbrt(arr[1])) {
+            return true
+        }
+    }
+    return false
+}
+
+console.log(checkSquareAndCube([4, 8]));
+console.log(checkSquareAndCube([16, 48]));
+console.log(checkSquareAndCube([9, 27]));
+
+// 20
+
+// Levers are simple machines with a rigid beam and a fulcrum. From the picture below, you can see that there are 3-types of levers: first class, second class and third class.
+// In a first class lever, the fulcrum is situated in the middle with the effort and the load being positioned opposite of each other.
+// In a second class lever, the fulcrum is situated in the right with the effort on the left and the load in the middle.
+// In a third class lever, the fulcrum is situated in the left with the effort being in the middle and the load being on the right.
+// Given an array that contains the fulcrum "f", the effort "e", and the load "l", write a function that determines whether or not the array shows a first class lever, second class lever, or a third class lever.
+
+// determineLever(["e", "f", "l"]) ➞ "first class lever"
+// determineLever(["e", "l", "f"]) ➞ "second class lever"
+// determineLever(["f", "e", "l"]) ➞ "third class lever"
+
+
+function determineLever(str) {
+    let main = "";
+    for (let i = 0; i < str.length; i++) {
+        if (str[1] === "f") return "first class lever"
+        if (str[1] === "l") return "second class lever"
+        if (str[1] === "e") return "third class lever"
+
+    }
+    return main
+}
+
+
+console.log(determineLever(["e", "f", "l"]));
+console.log(determineLever(["e", "l", "f"]));
+console.log(determineLever(["f", "e", "l"]));
+
+
+
