@@ -107,12 +107,12 @@ console.log(numArgs({}));
 
 function invertArray(arr) {
     const res = [];
-    // for (i = 0; i < arr.length; i++) {
-    // const currentValue = arr[i];
-    // res.push(-currentValue);
-    // }
-    // return res;
-    return arr.map(eachEle => -eachEle);
+    for (i = 0; i < arr.length; i++) {
+        const currentValue = arr[i];
+        res.push(-currentValue);
+    }
+    return res;
+    // return arr.map(eachEle => -eachEle);
 }
 
 
@@ -210,7 +210,7 @@ console.log(getVoteCount({ upvotes: 132, downvotes: 132 }));
 // If you're really stuck, unlock solutions in the Solutions tab.
 
 function reverse(arr) {
-    return arr.reverse()
+    // return arr.reverse()
     const res = []
     for (i = arr.length - 1; i >= 0; i--) {
         res.push(arr[i])
@@ -277,7 +277,7 @@ function incrementItems(arr) {
         arr[i] = arr[i] + 1
     }
     return arr
-    return arr.map(x => x + 1)
+    // return arr.map(x => x + 1)
 
 }
 
@@ -583,7 +583,7 @@ console.log(hasSameBread(["toast", "cheese", "toast"], ["brown bread", "cheese",
 // Remember Arrays & Null in JS are treated as object, hence the examples
 
 function arrayValuesTypes(x) {
-    return x.map(eachelemetn => typeof eachelemetn);
+    // return x.map(eachelemetn => typeof eachelemetn);
     let arr = [];
     for (i = 0; i < x.length; i++) {
         const eleType = typeof x[i]
