@@ -284,3 +284,121 @@ function toNumberArray(arr) {
 console.log(toNumberArray(["9.4", "4.2"]));
 console.log(toNumberArray(["91", "44"]));
 console.log(toNumberArray(["9.5", "8.8"])); 
+
+
+// 16}
+
+// Create a function that takes an array and returns the types of values (data types) in a new array.
+// Examples
+// arrayValuesTypes([1, 2, "null", []])
+// ➞ ["number", "number", "string", "object"]
+// arrayValuesTypes(["214", true, false, 2, 2.15, [], null])
+// ➞ ["string", "boolean", "boolean", "number", "number", "object", "object"]
+// arrayValuesTypes([21.1, "float", "array", ["I am array"], null, true, 214])
+// ➞ ["number", "string", "string", "object", "object", "boolean", "number"]
+
+function arrayValuesTypes(arr) {
+    return arr.map(elm => typeof elm)
+}
+
+console.log(arrayValuesTypes([1, 2, "null", []]));
+console.log(arrayValuesTypes(["214", true, false, 2, 2.15, [], null]));
+console.log(arrayValuesTypes([21.1, "float", "array", ["I am array"], null, true, 214]));
+
+
+// 17}
+
+// Given two arrays, which represent two sandwiches, return whether both sandwiches use the same type of bread. The bread will always be found at the start and end of the array.
+
+// Examples
+// hasSameBread(
+//   ["white bread", "lettuce", "white bread"],
+//   ["white bread", "tomato", "white bread"]
+// ) ➞ true
+
+// hasSameBread(
+//   ["brown bread", "chicken", "brown bread"],
+//   ["white bread", "chicken", "white bread"]
+// ) ➞ false
+
+// hasSameBread(
+//   ["toast", "cheese", "toast"],
+//   ["brown bread", "cheese", "toast"]
+// ) ➞ false
+
+
+function hasSameBread(arr, arr1) {
+    // return arr.at(0) === arr1.at(0) && arr.at(-1) === arr1.at(-1)
+    return arr[0] === arr1[0] && arr[arr.length - 1] === arr1[arr1.length - 1]
+}
+
+console.log(hasSameBread(
+    ["white bread", "lettuce", "white bread"],
+    ["white bread", "tomato", "white bread"]
+));
+console.log(hasSameBread(
+    ["brown bread", "chicken", "brown bread"],
+    ["white bread", "chicken", "white bread"]
+));
+console.log(hasSameBread(
+    ["toast", "cheese", "toast"],
+    ["brown bread", "cheese", "toast"]
+));
+
+// 18}
+
+// Create a function that takes an array of two numbers and checks if the square root of the first number is equal to the cube root of the second number.
+// Examples
+// checkSquareAndCube([4, 8]) ➞ true
+// checkSquareAndCube([16, 48]) ➞ false
+// checkSquareAndCube([9, 27]) ➞ true
+
+function checkSquareAndCube(arr) {
+    return Math.sqrt(arr[0]) === Math.cbrt(arr[1])
+}
+
+console.log(checkSquareAndCube([4, 8]));
+console.log(checkSquareAndCube([16, 48]));
+console.log(checkSquareAndCube([9, 27])); 
+
+// 19}
+
+// Levers are simple machines with a rigid beam and a fulcrum.From the picture below, you can see that there are 3 - types of levers: first class, second class and third class.
+// In a first class lever, the fulcrum is situated in the middle with the effort and the load being positioned opposite of each other.
+// In a second class lever, the fulcrum is situated in the right with the effort on the left and the load in the middle.
+// In a third class lever, the fulcrum is situated in the left with the effort being in the middle and the load being on the right.
+// Given an array that contains the fulcrum "f", the effort "e", and the load "l", write a function that determines whether or not the array shows a first class lever, second class lever, or a third class lever.
+
+// determineLever(["e", "f", "l"]) ➞ "first class lever"
+// determineLever(["e", "l", "f"]) ➞ "second class lever"
+// determineLever(["f", "e", "l"]) ➞ "third class lever"
+
+function determineLever(str) {
+    switch (str[1]) {
+        case "f":
+            return "first class lever"
+        case "l":
+            return "second class lever"
+        case "e":
+            return "third class lever"
+    }
+}
+
+console.log(determineLever(["e", "f", "l"]));
+console.log(determineLever(["e", "l", "f"]));
+console.log(determineLever(["f", "e", "l"])); 
+
+// 20}
+
+// Create a function which returns the length of a string, WITHOUT using String.length property.
+// length("Hello World") ➞ 11
+// length("Edabit") ➞ 6
+// length("wash your hands!") ➞ 16
+
+function length(str) {
+    return str.length
+}
+
+console.log(length("Hello World"));
+console.log(length("Edabit"));
+console.log(length("wash your hands!")); 
