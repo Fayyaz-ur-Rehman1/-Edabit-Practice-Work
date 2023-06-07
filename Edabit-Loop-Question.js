@@ -496,4 +496,44 @@ console.log(determineLever(["e", "l", "f"]));
 console.log(determineLever(["f", "e", "l"]));
 
 
+// 21}
+
+// Create a function which returns the length of a string, WITHOUT using String.length property.
+// length("Hello World") ➞ 11
+// length("Edabit") ➞ 6
+// length("wash your hands!") ➞ 16
+
+function length(str) {
+    let main = 0;
+    for (let i = 0; i < str.length; i++) {
+        main++
+    }
+    return main
+}
+
+console.log(length("Hello World"));
+console.log(length("Edabit"));
+console.log(length("wash your hands!"));
+
+// 22}
+
+// Create a function that takes a number and return an array of three numbers: half of the number, quarter of the number and an eighth of the number.
+// Examples
+// halfQuarterEighth(6) ➞ [3, 1.5, 0.75]
+// halfQuarterEighth(22) ➞ [11, 5.5, 2.75]
+// halfQuarterEighth(25) ➞ [12.5, 6.25, 3.125]
+
+function halfQuarterEighth(arr) {
+    let main = []
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[0] / 2) {
+            main.push(arr[i])
+        }
+    }
+    return main
+}
+
+console.log(halfQuarterEighth(6));
+console.log(halfQuarterEighth(22));
+console.log(halfQuarterEighth(25));
 
