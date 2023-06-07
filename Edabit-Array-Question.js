@@ -401,4 +401,68 @@ function length(str) {
 
 console.log(length("Hello World"));
 console.log(length("Edabit"));
-console.log(length("wash your hands!")); 
+console.log(length("wash your hands!"));
+
+
+// 21}
+
+// Create a function that takes a number and return an array of three numbers: half of the number, quarter of the number and an eighth of the number.
+
+// Examples
+// halfQuarterEighth(6) ➞ [3, 1.5, 0.75]
+// halfQuarterEighth(22) ➞ [11, 5.5, 2.75]
+// halfQuarterEighth(25) ➞ [12.5, 6.25, 3.125]
+
+function halfQuarterEighth(arr) {
+    let main = []
+    let half = arr / 2;
+    let quarter = arr / 4;
+    let eighth = arr / 8;
+    main.push(half, quarter, eighth)
+    return main
+}
+
+console.log(halfQuarterEighth(6));
+console.log(halfQuarterEighth(22));
+console.log(halfQuarterEighth(25)); 
+
+
+// 22}
+
+// Create a function that takes a whole number as input and returns the shape with that number's amount of sides. Here are the expected outputs to get from these inputs.
+
+// Inputs	Outputs
+// 1	"circle"
+// 2	"semi-circle"
+// 3	"triangle"
+// 4	"square"
+// 5	"pentagon"
+// 6	"hexagon"
+// 7	"heptagon"
+// 8	"octagon"
+// 9	"nonagon"
+// 10	"decagon"
+// Examples
+// nSidedShape(3) ➞ "triangle"
+// nSidedShape(1) ➞ "circle"
+// nSidedShape(9) ➞ "nonagon"
+
+function nSidedShape(num) {
+    const allshape = {
+        1: "circle",
+        2: "semi-circle",
+        3: "triangle",
+        4: "square",
+        5: "pentagon",
+        6: "hexagon",
+        7: "heptagon",
+        8: "octagon",
+        9: "nonagon",
+        10: "decagon",
+    }
+    return allshape[num]
+}
+
+console.log(nSidedShape(3));
+console.log(nSidedShape(1));
+console.log(nSidedShape(9)); 
