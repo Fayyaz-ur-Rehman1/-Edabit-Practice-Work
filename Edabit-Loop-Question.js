@@ -743,4 +743,167 @@ function invertArray(arr) {
 
 console.log(invertArray([1, 2, 3, 4, 5]));
 console.log(invertArray([1, -2, 3, -4, 5]));
-console.log(invertArray([])); 
+console.log(invertArray([]));
+
+
+
+// 31}
+
+// Create a function that returns the selected filename from a path. Include the extension in your answer.
+// Examples
+// getFilename("C:/Projects/pil_tests/ascii/edabit.txt") ➞ "edabit.txt"
+// getFilename("C:/Users/johnsmith/Music/Beethoven_5.mp3") ➞ "Beethoven_5.mp3"
+// getFilename("ffprobe.exe") ➞ "ffprobe.exe"
+
+function getFilename(str) {
+    return str.split('/').pop();
+}
+
+console.log(getFilename("C:/Projects/pil_tests/ascii/edabit.txt"));
+console.log(getFilename("C:/Users/johnsmith/Music/Beethoven_5.mp3"));
+console.log(getFilename("ffprobe.exe"));
+
+// 32}
+
+// Write a function that returns the sum of elements greater than 5, in the given array .
+// Examples
+// sumFive([1, 5, 20, 30, 4, 9, 18]) ➞ 77
+// sumFive([1, 2, 3, 4]) ➞ 0
+// sumFive([10, 12, 28, 47, 55, 100]) ➞ 252
+
+function sumFive(arr) {
+    let main = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 5) {
+            main += arr[i]
+        }
+    }
+    return main
+}
+
+console.log(sumFive([1, 5, 20, 30, 4, 9, 18]));
+console.log(sumFive([1, 2, 3, 4]));
+console.log(sumFive([10, 12, 28, 47, 55, 100]));
+
+
+// 33}
+
+
+// Create a function that takes an array and returns the sum of all numbers in the array.
+// Examples
+// getSumOfItems([2, 7, 4]) ➞ 13
+// getSumOfItems([45, 3, 0]) ➞ 48
+// getSumOfItems([-2, 84, 23]) ➞ 105
+
+function getSumOfItems(arr) {
+    let main = 0;
+    for (let i = 0; i < arr.length; i++) {
+        main += arr[i]
+    }
+    return main
+}
+
+console.log(getSumOfItems([2, 7, 4]));
+console.log(getSumOfItems([45, 3, 0]));
+console.log(getSumOfItems([-2, 84, 23]));
+
+
+// 34}
+
+// Create a function that returns an array of all the integers between two given numbers start and end.
+// Examples
+// rangeOfNum(2, 4) ➞ [3]
+// rangeOfNum(5, 9) ➞ [6, 7, 8]
+// rangeOfNum(2, 11) ➞ [3, 4, 5, 6, 7, 8, 9, 10]
+
+function rangeOfNum(start, end) {
+    let main = []
+    for (let i = start + 1; i < end; i++) {
+        main.push(i)
+    }
+    return main
+}
+
+console.log(rangeOfNum(2, 4));
+console.log(rangeOfNum(5, 9));
+console.log(rangeOfNum(2, 11));
+
+// 36} 
+
+// Write a function that takes an array of drinks and returns an array of only drinks with no sugar in them. Drinks that contain sugar (in this challenge) are:
+// cola
+// fanta
+// Examples
+// skipTooMuchSugarDrinks(["fanta", "cola", "water"]) ➞ ["water"]
+// skipTooMuchSugarDrinks(["fanta", "cola"]) ➞ []
+// skipTooMuchSugarDrinks(["lemonade", "beer", "water"]) ➞ ["lemonade", "beer", "water"]
+
+function skipTooMuchSugarDrinks(arr) {
+    let main = []
+    for (let i = 0; i < arr.length; i++) {
+        if ("fanta" !== arr[i] && "cola" !== arr[i]) {
+            main.push(arr[i])
+        }
+    }
+    return main
+}
+
+
+console.log(skipTooMuchSugarDrinks(["fanta", "cola", "water"]));
+console.log(skipTooMuchSugarDrinks(["fanta", "cola"]));
+console.log(skipTooMuchSugarDrinks(["lemonade", "beer", "water"]));
+
+
+// 37}
+
+// Given an array of numbers, create a function which returns the same array but with each element's index in the array added to itself. This means you add 0 to the number at index 0, add 1 to the number at index 1, etc...
+// Examples
+// addIndexes([0, 0, 0, 0, 0]) ➞ [0, 1, 2, 3, 4]
+// addIndexes([1, 2, 3, 4, 5]) ➞ [1, 3, 5, 7, 9]
+// addIndexes([5, 4, 3, 2, 1]) ➞ [5, 5, 5, addIndexes([0, 0, 0, 0, 0]) ➞ [0, 1, 2, 3, 4]
+
+function addIndexes(arr) {
+    let main = []
+    for (let i = 0; i < arr.length; i++) {
+        main.push(arr[i] + i)
+    }
+    return main
+}
+
+
+console.log(addIndexes([0, 0, 0, 0, 0]));
+console.log(addIndexes([1, 2, 3, 4, 5]));
+console.log(addIndexes([5, 4, 3, 2, 1]));
+
+// 38}
+
+// According to the lodash documentatsion, _.fill Fills elements of an array with the value from start to, but not including, end. Note that this method mutates the array.
+
+// This challenge requires you to write your own version of this function without using lodash so that you can better understand it works.
+
+// Arguments
+// array (Array): The array to fill.
+// value (*): The value to fill array with.
+// [start=0] (number): The start position.
+// [end=array.length] (number): The end position.
+// Returns
+// (Array): Returns array.
+// Examples
+// var array = [1, 2, 3]
+
+// fill(array, "a") ➞ ["a", "a", "a"]
+
+// fill(Array(3), 2) ➞ [2, 2, 2]
+
+// fill([4, 6, 8, 10], "*", 1, 3) ➞ [4, "*", "*", 10]
+
+function fill(arr, value, start = 0, end = arr.length) {
+    for (let i = start; i < end; i++) {
+        arr[i] = value
+    }
+    return arr
+}
+
+console.log(fill([1, 2, 3], "a"));
+console.log(fill(Array(3), 2));
+console.log(fill([4, 6, 8, 10], "*", 1, 3));
