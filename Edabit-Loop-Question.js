@@ -907,3 +907,30 @@ function fill(arr, value, start = 0, end = arr.length) {
 console.log(fill([1, 2, 3], "a"));
 console.log(fill(Array(3), 2));
 console.log(fill([4, 6, 8, 10], "*", 1, 3));
+
+
+// 39}
+
+// n mathematics and digital electronics, a binary number is a number expressed in the base-2 numeral system or binary numeral system. Given an array of ones and zeroes of a binary number, return the equivalent decimal value.
+// Examples
+// binaryToDecimal([0, 0, 0, 1]) ➞ 1
+// binaryToDecimal([0, 0, 1, 0]) ➞ 2
+// binaryToDecimal([1, 1, 1, 1, 1, 0, 1, 1, 0, 1]) ➞ 1005
+
+
+function binaryToDecimal(num) {
+    let pow = 0;
+    let sum = 0
+    for (let i = num.length - 1; i >= 0; i--) {
+        if (num[i] === 1) {
+            sum += Math.pow(2, pow)
+        }
+        pow++
+    }
+    return sum
+}
+
+
+console.log(binaryToDecimal([0, 0, 0, 1]));
+console.log(binaryToDecimal([0, 0, 1, 0]));
+console.log(binaryToDecimal([1, 1, 1, 1, 1, 0, 1, 1, 0, 1])); 
