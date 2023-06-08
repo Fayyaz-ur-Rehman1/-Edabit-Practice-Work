@@ -933,4 +933,208 @@ function binaryToDecimal(num) {
 
 console.log(binaryToDecimal([0, 0, 0, 1]));
 console.log(binaryToDecimal([0, 0, 1, 0]));
-console.log(binaryToDecimal([1, 1, 1, 1, 1, 0, 1, 1, 0, 1])); 
+console.log(binaryToDecimal([1, 1, 1, 1, 1, 0, 1, 1, 0, 1]));
+
+// 40}
+
+// Create a function that takes an array of strings and numbers, and filters out the array so that it returns an array of integers only.
+// Examples
+// filterArray([1, 2, 3, "a", "b", 4]) ➞ [1, 2, 3, 4]
+// filterArray(["A", 0, "Edabit", 1729, "Python", "1729"]) ➞ [0, 1729]
+// filterArray(["Nothing", "here"]) ➞ []
+
+function filterArray(arr) {
+    let main = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] === 'number') {
+            main.push(arr[i])
+        }
+    }
+    return main
+}
+
+console.log(filterArray([1, 2, 3, "a", "b", 4]));
+console.log(filterArray(["A", 0, "Edabit", 1729, "Python", "1729"]));
+console.log(filterArray(["Nothing", "here"]));
+
+
+// 41}
+
+// Create a function that returns an array of booleans from a given number by iterating through the number one digit at a time and appending true into the array if the digit is 1 and false otherwise.
+// Examples
+// integerBoolean("100101") ➞ [true, false, false, true, false, true]
+// integerBoolean("10") ➞ [true, false]
+// integerBoolean("001") ➞ [false, false, true]
+
+function integerBoolean(str) {
+    let main = [];
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === '1') main.push(true)
+        if (str[i] !== '1') main.push(false)
+    }
+    return main
+}
+console.log(integerBoolean("100101"));
+console.log(integerBoolean("10"));
+console.log(integerBoolean("001"));
+
+// 42}
+
+// Given a letter and an array of words, return whether the letter does not appear in any of the words.
+// Examples
+// forbiddenLetter("r", ["rock", "paper", "scissors"]) ➞ false
+// forbiddenLetter("a", ["spoon", "fork", "knife"]) ➞ true
+// forbiddenLetter("m", []) ➞ true
+
+function forbiddenLetter(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === "r") {
+            return false
+        }
+    }
+    return true
+}
+
+
+console.log(forbiddenLetter("r", ["rock", "paper", "scissors"]));
+console.log(forbiddenLetter("a", ["spoon", "fork", "knife"]));
+console.log(forbiddenLetter("m", []));
+
+// 43}
+
+// Create a function that takes a year as an argument and returns the corresponding Chinese zodiac.
+
+//     Examples
+// chineseZodiac(2021) ➞ "Ox"
+
+// chineseZodiac(2020) ➞ "Rat"
+
+// chineseZodiac(1933) ➞ "Rooster"
+// Notes
+// The list of animals used can vary slightly, so check the Resources tab for the list that you will need for this challenge.
+
+function chineseZodiac(year) {
+        const obj1 = {
+            2021: "0x",
+            2020: "Rat",
+            1933: "Rooster",
+        }
+        return obj1[year]
+    }
+
+console.log(chineseZodiac(2021));
+console.log(chineseZodiac(2020));
+console.log(chineseZodiac(1933));
+
+// // 44}
+
+// // Write a function that accepts the width and height (m, n) and an optional proc s and generates an array with m elements. Each element is a string consisting of either:
+
+// The default character (hash #) repeating n times (if no proc is given).
+// The character passed in through the proc repeating n times.
+// Examples
+// makeRug(3, 5) ➞ [
+//   "#####",
+//   "#####",
+//   "#####"
+// ]
+
+// makeRug(3, 5, '$')  ➞ [
+//   "$$$$$",I
+//   "$$$$$",
+//   "$$$$$"
+// ]
+
+// makeRug(2, 2, 'A')  ➞ [
+//   "AA",
+//   "AA"
+// ]
+
+function makeRug(rows, colums, symbol = '#') {
+    let main = [];
+    for (let i = 0; i < rows; i++) {
+        let row = '';
+        for (let k = 0; k < colums; k++) {
+            row += symbol;
+        }
+        main.push(row)
+    }
+    return main
+}
+
+
+console.log(makeRug(3, 5));
+console.log(makeRug(3, 5, '$'));
+console.log(makeRug(2, 2, 'A'));
+
+
+// // 45}
+
+// // Create a function that takes two arguments of an array of numbers arr and a constant number n and returns the n largest numbers from the given array.
+
+// // Examples
+// // largestNumbers(2, [4, 3, 2, 1]) ➞ [3, 4]
+
+// // largestNumbers(1, [7, 19, 4, 2]) ➞ [19]
+
+// // largestNumbers(3, [14, 12, 57, 11, 18, 16]) ➞ [16, 18, 57]
+
+// // largestNumbers(0, [1, 3, 4, 2]) ➞ []
+
+function largestNumbers(n, arr) {
+    let main = [];
+
+    for (let i = 0; i < n; i++) {
+        let max = arr[0];
+        let maxIndex = 0;
+
+        for (let j = 1; j < arr.length; j++) {
+            if (arr[j] > max) {
+                max = arr[j];
+                maxIndex = j;
+            }
+        }
+
+        main.push(max);
+        arr[maxIndex] = -Infinity;
+    }
+
+    return main;
+}
+
+
+
+console.log(largestNumbers(2, [4, 3, 2, 1]));
+console.log(largestNumbers(1, [7, 19, 4, 2]));
+console.log(largestNumbers(3, [14, 12, 57, 11, 18, 16]));
+console.log(largestNumbers(0, [1, 3, 4, 2]));
+
+
+
+
+
+// 47}
+// Create a function that takes a 2D array arr and returns the sum of the minimum value in each row.
+
+// Examples
+// sumMinimums([
+//   [1, 2, 3, 4, 5],
+//   [5, 6, 7, 8, 9],
+//   [20, 21, 34, 56, 100]
+// ]) ➞ 26
+
+// minimum value of the first row is 1
+// minimum value of the second row is 5
+// minimum value of the third row is 20
+
+
+
+function sumMinimums(arr1, arr2, arr3) {
+    let main = 0;
+    for (let i = 0; i < arr1.length; i++) {
+        main.push(arr1[0] += arr2[0] += arr3[0])
+    }
+    return main
+}
+
+console.log(sumMinimums([[1, 2, 3, 4, 5], [5, 6, 7, 8, 9], [20, 21, 34, 56, 100]])); 
