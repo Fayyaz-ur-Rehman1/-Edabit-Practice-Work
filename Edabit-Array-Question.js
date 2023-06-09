@@ -283,7 +283,7 @@ function toNumberArray(arr) {
 
 console.log(toNumberArray(["9.4", "4.2"]));
 console.log(toNumberArray(["91", "44"]));
-console.log(toNumberArray(["9.5", "8.8"])); 
+console.log(toNumberArray(["9.5", "8.8"]));
 
 
 // 16}
@@ -359,7 +359,7 @@ function checkSquareAndCube(arr) {
 
 console.log(checkSquareAndCube([4, 8]));
 console.log(checkSquareAndCube([16, 48]));
-console.log(checkSquareAndCube([9, 27])); 
+console.log(checkSquareAndCube([9, 27]));
 
 // 19}
 
@@ -386,7 +386,7 @@ function determineLever(str) {
 
 console.log(determineLever(["e", "f", "l"]));
 console.log(determineLever(["e", "l", "f"]));
-console.log(determineLever(["f", "e", "l"])); 
+console.log(determineLever(["f", "e", "l"]));
 
 // 20}
 
@@ -424,7 +424,7 @@ function halfQuarterEighth(arr) {
 
 console.log(halfQuarterEighth(6));
 console.log(halfQuarterEighth(22));
-console.log(halfQuarterEighth(25)); 
+console.log(halfQuarterEighth(25));
 
 
 // 22}
@@ -465,4 +465,151 @@ function nSidedShape(num) {
 
 console.log(nSidedShape(3));
 console.log(nSidedShape(1));
-console.log(nSidedShape(9)); 
+console.log(nSidedShape(9));
+
+// 24}
+
+// Create a function that takes an array with numbers and return an array with the elements multiplied by two.
+// Examples
+
+// Examples
+// getMultipliedArr([2, 5, 3]) ➞ [4, 10, 6]
+
+// getMultipliedArr([1, 86, -5]) ➞ [2, 172, -10]
+
+// getMultipliedArr([5, 382, 0]) ➞ [10, 764, 0]
+// Notes
+
+function getMultipliedArr(arr) {
+    return arr.map(function (elm) {
+        return elm * 2
+    })
+}
+
+console.log(getMultipliedArr([2, 5, 3]));
+console.log(getMultipliedArr([1, 86, -5]));
+console.log(getMultipliedArr([5, 382, 0]));
+
+// 25}
+
+// Create a function that takes an array of words and transforms it into an array of each word's length.
+// Examples
+// wordLengths(["hello", "world"]) ➞ [5, 5]
+
+// wordLengths(["Halloween", "Thanksgiving", "Christmas"]) ➞ [9, 12, 9]
+
+// wordLengths(["She", "sells", "seashells", "down", "by", "the", "seashore"]) ➞ [3, 5, 9, 4, 2, 3, 8]
+
+function wordLengths(arr) {
+    return arr.map(function (elm) {
+        return elm.length
+    })
+}
+
+console.log(wordLengths(["hello", "world"]));
+console.log(wordLengths(["Halloween", "Thanksgiving", "Christmas"]));
+console.log(wordLengths(["She", "sells", "seashells", "down", "by", "the", "seashore"]));
+
+
+// 26}
+
+// Create a program that will take two arrays of integers, a and b. Each array will consist of 3 positive integers, representing the dimensions of cuboids a and b. Find the difference of the cuboids' volumes.
+// For example, if the parameters passed are ([2, 2, 3], [5, 4, 1]), the volume of a is 12 and the volume of b is 20. Therefore, the function should return 8.
+// Examples
+// findDifference([ 28, 16, 29 ], [ 7, 8, 17 ]) ➞ 12040
+// findDifference([ 9, 22, 18 ], [ 16, 24, 10 ]) ➞ 276
+// findDifference([ 1, 9, 25 ], [ 10, 7, 9 ]) ➞ 405
+// findDifference([ 7, 6, 16 ], [ 26, 9, 26 ]) ➞ 5412
+
+// , [ 26, 9, 26 ]) ➞ 5412
+
+function findDifference(arr, arr1) {
+    let total1 = 1;
+    let total2 = 1;
+    for (let i = 0; i < arr.length; i++) {
+        total1 *= arr[i]
+        total2 *= arr1[i]
+    }
+    return Math.abs(total1 - total2)
+}
+
+function findDifference(num, num1) {
+}
+
+console.log(findDifference([28, 16, 29], [7, 8, 17]));
+console.log(findDifference([9, 22, 18], [16, 24, 10]));
+console.log(findDifference([1, 9, 25], [10, 7, 9]));
+console.log(findDifference([7, 6, 16], [26, 9, 26]));
+
+// 27}
+
+// Given an array of integers, determine whether the sum of its elements is even or odd.
+// The return value should be a string ("odd" or "even").
+// If the input array is empty, consider it as an array with a zero ([0]).
+// Examples
+// evenOrOdd([0]) ➞ "even"
+
+// evenOrOdd([1]) ➞ "odd"
+
+// evenOrOdd([]) ➞ "even"
+
+// evenOrOdd([0, 1, 5]) ➞ "even"
+
+function evenOrOdd(arr) {
+    return
+}
+
+console.log(evenOrOdd([0]));
+console.log(evenOrOdd([1]));
+console.log(evenOrOdd([]));
+console.log(evenOrOdd([0, 1, 5]));
+
+// 28}
+
+// Create a function that takes a string and returns a string with spaces in between all of the characters.
+// xamples
+// spaceMeOut("space") ➞ "s p a c e"
+// spaceMeOut("far out") ➞ "f a r   o u t"
+// spaceMeOut("elongated musk") ➞ "e l o n g a t e d   m u s k"
+
+function spaceMeOut(str) {
+    return str.split("").join(' ')
+}
+
+console.log(spaceMeOut("space"));
+console.log(spaceMeOut("far out"));
+console.log(spaceMeOut("elongated musk"));
+
+
+// 29}
+
+// Given an array, rotate the values clockwise by one (the last value is sent to the first position).
+// Check the examples for a better understanding.
+// Examples
+// rotateByOne([1, 2, 3, 4, 5]) ➞ [5, 1, 2, 3, 4]
+// rotateByOne([6, 5, 8, 9, 7]) ➞ [7, 6, 5, 8, 9]
+// rotateByOne([20, 15, 26, 8, 4]) ➞ [4, 20, 15, 26, 8]
+
+function rotateByOne(num) {
+    return num.map(function (elm) {
+        return elm
+    })
+}
+console.log(rotateByOne([1, 2, 3, 4, 5]));
+console.log(rotateByOne([6, 5, 8, 9, 7]));
+console.log(rotateByOne([20, 15, 26, 8, 4]));
+
+// 30}
+
+// Create a function that takes an array of numbers arr and returns an inverted array.
+// Examples
+// invertArray([1, 2, 3, 4, 5]) ➞ [-1, -2, -3, -4, -5]
+// invertArray([1, -2, 3, -4, 5]) ➞ [-1, 2, -3, 4, -5]
+
+function invertArray(arr) {
+    return arr
+}
+
+console.log(invertArray([1, 2, 3, 4, 5]));
+console.log(invertArray([1, -2, 3, -4, 5]));
+console.log(invertArray([]));
