@@ -95,6 +95,68 @@ let p = ['fayyaz', 'danish', 'adnan', 'shaif', 'ayyaz'];
 let q = p.splice(2, 1, 4)
 console.log(q);
 
-let u = ['fayyaz','danish','adnan','shaif','ayyaz'];
+let u = ['fayyaz', 'danish', 'adnan', 'shaif', 'ayyaz'];
 let v = u.toLocaleString()
 console.log(v);
+
+let w = ['fayyaz', 'ayyaz', 'aijaj', 'hamaza', 'uzaifa'];
+w.pop();
+console.log(w);
+
+
+///////////////////////////// all Call back function//////////////////////////////
+
+
+
+// forEach////////
+// any elemnet  present in Array and you use forEach method then call back function 
+// run any element . and array element give order and run callback function in array element
+// forech fuction send callback function in array any value
+
+const array8 = ['fayyaz', 'danish', 'sahle', 'muajhid'];
+let foreach = arr.forEach(function (elm) {
+    console.log(elm);
+})
+
+const array2 = ['fayyaz', 'danish', 'sahle', 'muajhid'];
+
+let forec = arr2.forEach(function (elm, index) {
+    console.log(index + " " + elm);
+})
+
+const array5 = ['fayyaz', 'danish', 'sahle', 'muajhid'];
+let foreach3 = arr3.forEach(function (elm, index, arr) {
+    console.log(elm + " " + index + " " + arr);
+})
+
+const array9 = ['fayyaz', 'danish', 'sahle', 'muajhid'];
+let foreach4 = arr4.forEach(function (eml, index, arr) {
+    console.log(arr[2]);
+})
+
+const array0 = [1, 2, 3, 4, 5, 6, 7, 8]
+let foreach5 = arr5.forEach(function (elm, index, arr) {
+    console.log(arr[index] + 100);
+})
+
+
+const array10= [1, 2, 3, 4, 5, 6, 7, 8]
+let foreach6 = arr5.forEach(function (elm, index, arr) {
+    console.log(arr[elm, index] + 100);
+})
+
+//  Reduce/////
+
+//  The reduce () method executes a reducer function function that you provide
+// on each element of the array , resulating in single output value
+
+let array = [3, 4, 5, 6, 7, 4, 5];
+let reduce = array.reduce(function (accumlater, currentelm) {
+    return accumlater + currentelm
+})
+console.log(reduce);
+
+let array1 = [3, 4, 5, 5];
+let reduce2 = array1.reduce(function (elm,){
+
+})
