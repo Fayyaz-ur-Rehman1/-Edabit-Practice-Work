@@ -591,9 +591,9 @@ console.log(spaceMeOut("elongated musk"));
 // rotateByOne([20, 15, 26, 8, 4]) ➞ [4, 20, 15, 26, 8]
 
 function rotateByOne(num) {
-    return num.map(function (elm) {
-        return elm
-    })
+    b = num.pop()
+    num.unshift(b)
+    return num
 }
 console.log(rotateByOne([1, 2, 3, 4, 5]));
 console.log(rotateByOne([6, 5, 8, 9, 7]));
@@ -607,9 +607,313 @@ console.log(rotateByOne([20, 15, 26, 8, 4]));
 // invertArray([1, -2, 3, -4, 5]) ➞ [-1, 2, -3, 4, -5]
 
 function invertArray(arr) {
-    return arr
+    return arr.map(x => -x)
 }
 
 console.log(invertArray([1, 2, 3, 4, 5]));
 console.log(invertArray([1, -2, 3, -4, 5]));
 console.log(invertArray([]));
+
+// 31}
+
+// Create a function that returns the selected filename from a path. Include the extension in your answer.
+// Examples
+// getFilename("C:/Projects/pil_tests/ascii/edabit.txt") ➞ "edabit.txt"
+// getFilename("C:/Users/johnsmith/Music/Beethoven_5.mp3") ➞ "Beethoven_5.mp3"
+// getFilename("ffprobe.exe") ➞ "ffprobe.exe"
+
+function getFilename(str) {
+    return str.split('/').pop();
+}
+
+console.log(getFilename("C:/Projects/pil_tests/ascii/edabit.txt"));
+console.log(getFilename("C:/Users/johnsmith/Music/Beethoven_5.mp3"));
+console.log(getFilename("ffprobe.exe"));
+
+// 32}
+
+// Write a function that returns the sum of elements greater than 5, in the given array .
+// Examples
+// sumFive([1, 5, 20, 30, 4, 9, 18]) ➞ 77
+// sumFive([1, 2, 3, 4]) ➞ 0
+// sumFive([10, 12, 28, 47, 55, 100]) ➞ 252
+
+function sumFive(arr) {
+    return arr.filter(x => x > 5).reduce((a, b) => a + b, 0)
+}
+
+console.log(sumFive([1, 5, 20, 30, 4, 9, 18]));
+console.log(sumFive([1, 2, 3, 4]));
+console.log(sumFive([10, 12, 28, 47, 55, 100]));
+
+// 33}
+
+// Create a function that takes an array and returns the sum of all numbers in the array.
+// Examples
+// getSumOfItems([2, 7, 4]) ➞ 13
+// getSumOfItems([45, 3, 0]) ➞ 48
+// getSumOfItems([-2, 84, 23]) ➞ 105
+
+function getSumOfItems(arr) {
+    return arr.reduce((a, b) => {
+        return a + b
+    })
+}
+
+console.log(getSumOfItems([2, 7, 4]));
+console.log(getSumOfItems([45, 3, 0]));
+console.log(getSumOfItems([-2, 84, 23]));
+
+
+
+// 34}
+
+// Create a function that returns an array of all the integers between two given numbers start and end.
+// Examples
+// rangeOfNum(2, 4) ➞ [3]
+// rangeOfNum(5, 9) ➞ [6, 7, 8]
+// rangeOfNum(2, 11) ➞ [3, 4, 5, 6, 7, 8, 9, 10]
+
+function rangeOfNum(start, end) {
+    let main = []
+    for (let i = start + 1; i < end; i++) {
+        main.push(i)
+    }
+    return main
+}
+
+console.log(rangeOfNum(2, 4));
+console.log(rangeOfNum(5, 9));
+console.log(rangeOfNum(2, 11));
+
+// 35} 
+
+// Write a function that takes an array of drinks and returns an array of only drinks with no sugar in them. Drinks that contain sugar (in this challenge) are:
+// cola
+// fanta
+// Examples
+// skipTooMuchSugarDrinks(["fanta", "cola", "water"]) ➞ ["water"]
+// skipTooMuchSugarDrinks(["fanta", "cola"]) ➞ []
+// skipTooMuchSugarDrinks(["lemonade", "beer", "water"]) ➞ ["lemonade", "beer", "water"]
+
+function skipTooMuchSugarDrinks(arr) {
+
+    let juice = arr.filter(arr => {
+        return arr !== "fanta" && arr !== "cola";
+    })
+    return juice
+}
+
+
+console.log(skipTooMuchSugarDrinks(["fanta", "cola", "water"]));
+console.log(skipTooMuchSugarDrinks(["fanta", "cola"]));
+console.log(skipTooMuchSugarDrinks(["lemonade", "beer", "water"]));
+
+
+// 37}
+
+// Given an array of numbers, create a function which returns the same array but with each element's index in the array added to itself. This means you add 0 to the number at index 0, add 1 to the number at index 1, etc...
+// Examples
+// addIndexes([0, 0, 0, 0, 0]) ➞[0, 1, 2, 3, 4]
+// addIndexes([1, 2, 3, 4, 5]) ➞[1, 3, 5, 7, 9]
+// addIndexes([5, 4, 3, 2, 1]) ➞[5, 5, 5, addIndexes([0, 0, 0, 0, 0]) ➞[0, 1, 2, 3, 4]
+
+function addIndexes(arr) {
+        return arr.map((a, b) => a + b)
+    }
+
+
+console.log(addIndexes([0, 0, 0, 0, 0]));
+    console.log(addIndexes([1, 2, 3, 4, 5]));
+    console.log(addIndexes([5, 4, 3, 2, 1]));
+
+
+    // 38}
+
+    // n mathematics and digital electronics, a binary number is a number expressed in the base-2 numeral system or binary numeral system. Given an array of ones and zeroes of a binary number, return the equivalent decimal value.
+    // Examples
+    // binaryToDecimal([0, 0, 0, 1]) ➞ 1
+    // binaryToDecimal([0, 0, 1, 0]) ➞ 2
+    // binaryToDecimal([1, 1, 1, 1, 1, 0, 1, 1, 0, 1]) ➞ 1005
+
+
+    function binaryToDecimal(num) {
+        return parseInt(num.join(""), 2)
+
+    }
+
+
+console.log(binaryToDecimal([0, 0, 0, 1]));
+    console.log(binaryToDecimal([0, 0, 1, 0]));
+    console.log(binaryToDecimal([1, 1, 1, 1, 1, 0, 1, 1, 0, 1]));
+
+    // 39}
+
+    // Create a function that takes an array of strings and numbers, and filters out the array so that it returns an array of integers only.
+    // Examples
+    // filterArray([1, 2, 3, "a", "b", 4]) ➞ [1, 2, 3, 4]
+    // filterArray(["A", 0, "Edabit", 1729, "Python", "1729"]) ➞ [0, 1729]
+    // filterArray(["Nothing", "here"]) ➞ []
+
+    function filterArray(arr) {
+        return arr.filter((a) => a < 1730)
+    }
+
+
+console.log(filterArray([1, 2, 3, "a", "b", 4]));
+    console.log(filterArray(["A", 0, "Edabit", 1729, "Python", "1729"]));
+    console.log(filterArray(["Nothing", "here"]));
+
+
+    // 40}
+
+    // Create a function that returns an array of booleans from a given number by iterating through the number one digit at a time and appending true into the array if the digit is 1 and false otherwise.
+    // Examples
+    // integerBoolean("100101") ➞ [true, false, false, true, false, true]
+    // integerBoolean("10") ➞ [true, false]
+    // integerBoolean("001") ➞ [false, false, true]
+
+    function integerBoolean(str) {
+        return str.split('').map(function (x) {
+            return x === '1'
+        })
+    }
+console.log(integerBoolean("100101"));
+    console.log(integerBoolean("10"));
+    console.log(integerBoolean("001"));
+
+
+
+
+    // 41}
+
+    // Given a letter and an array of words, return whether the letter does not appear in any of the words.
+    // Examples
+    // forbiddenLetter("r", ["rock", "paper", "scissors"]) ➞ false
+    // forbiddenLetter("a", ["spoon", "fork", "knife"]) ➞ true
+    // forbiddenLetter("m", []) ➞ true
+
+    function forbiddenLetter(a, arr) {
+        return arr.every(function (word) {
+            return !word.includes(a)
+        })
+    }
+console.log(forbiddenLetter("r", ["rock", "paper", "scissors"]));
+    console.log(forbiddenLetter("a", ["spoon", "fork", "knife"]));
+    console.log(forbiddenLetter("m", []));
+
+    // 42}
+
+    // Create a function that takes a year as an argument and returns the corresponding Chinese zodiac.
+
+    //     Examples
+    // chineseZodiac(2021) ➞ "Ox"
+
+    // chineseZodiac(2020) ➞ "Rat"
+
+    // chineseZodiac(1933) ➞ "Rooster"
+    // Notes
+    // The list of animals used can vary slightly, so check the Resources tab for the list that you will need for this challenge.
+
+    function chineseZodiac(year) {
+        const obj1 = {
+            2021: "0x",
+            2020: "Rat",
+            1933: "Rooster",
+        }
+        return obj1[year]
+    }
+
+console.log(chineseZodiac(2021));
+    console.log(chineseZodiac(2020));
+    console.log(chineseZodiac(1933));
+
+
+
+
+    // // 43}
+
+    // // Write a function that accepts the width and height (m, n) and an optional proc s and generates an array with m elements. Each element is a string consisting of either:
+
+    // The default character (hash #) repeating n times (if no proc is given).
+    // The character passed in through the proc repeating n times.
+    // Examples
+    // makeRug(3, 5) ➞ [
+    //   "#####",
+    //   "#####",
+    //   "#####"
+    // ]
+
+    // makeRug(3, 5, '$')  ➞ [
+    //   "$$$$$",I
+    //   "$$$$$",
+    //   "$$$$$"
+    // ]
+
+    // makeRug(2, 2, 'A')  ➞ [
+    //   "AA",
+    //   "AA"
+    // // ]
+
+    function makeRug(m, n, s = '#') {
+        let a = [3, 2];
+        for (let i = 0; i < m; i++) a.push(s.repeat(n))
+        return a;
+    }
+
+console.log(makeRug(3, 5));
+    console.log(makeRug(3, 5, '$'));
+    console.log(makeRug(2, 2, 'A'));
+
+
+
+    // 44}
+
+
+    // // Create a function that takes two arguments of an array of numbers arr and a constant number n and returns the n largest numbers from the given array.
+
+    // // Examples
+    // // largestNumbers(2, [4, 3, 2, 1]) ➞ [3, 4]
+
+    // // largestNumbers(1, [7, 19, 4, 2]) ➞ [19]
+
+    // // largestNumbers(3, [14, 12, 57, 11, 18, 16]) ➞ [16, 18, 57]
+
+    // // largestNumbers(0, [1, 3, 4, 2]) ➞ []
+
+    function largestNumbers(n, arr) {
+        return n == 0 ? arr : arr.sort((x, y) => x - y).slice(-n)
+
+    }
+console.log(largestNumbers(2, [4, 3, 2, 1]));
+    console.log(largestNumbers(1, [7, 19, 4, 2]));
+    console.log(largestNumbers(3, [14, 12, 57, 11, 18, 16]));
+    console.log(largestNumbers(0, [1, 3, 4, 2]));
+
+
+    // 45}
+
+    // Create a function that takes a 2D array arr and returns the sum of the minimum value in each row.
+
+    // Examples
+    // sumMinimums([
+    //   [1, 2, 3, 4, 5],
+    //   [5, 6, 7, 8, 9],
+    //   [20, 21, 34, 56, 100]
+    // ]) ➞ 26
+
+    // minimum value of the first row is 1
+    // minimum value of the second row is 5
+    // minimum value of the third row is 20
+
+
+
+    function sumMinimums(arr) {
+        const echmin = arr.reduce((acc, val) => {
+            acc.push(Math.min(...val))
+            return acc
+        }, [])
+        return echmin
+    }
+
+console.log(sumMinimums([[1, 2, 3, 4, 5], [5, 6, 7, 8, 9], [20, 21, 34, 56, 100]]))
