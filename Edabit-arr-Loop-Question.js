@@ -102,7 +102,7 @@ console.log(incrementItems([-1, -2, -3, -4]));
 
 
 function getLastItem(arr) {
-    for (let i = 2; i < arr.length; i++) {
+    for (let i = arr.length - 1; i <= arr.length; i++) {
         return arr[i]
     }
 }
@@ -121,7 +121,7 @@ console.log(getLastItem([true, false, true]));
 // arrayToString([1, 2, 3, "a", "s", "dAAAA"]) ➞ "123asdAAAA"
 
 function arrayToString(arr) {
-    str = "";
+    let str = "";
     for (let i = 0; i < arr.length; i++) {
         str += arr[i]
     }
@@ -149,19 +149,11 @@ function concat(arr, arr1) {
     return arr
 }
 
-
 console.log(concat([1, 3, 5], [2, 6, 8]));
 console.log(concat([7, 8], [10, 9, 1, 1, 2]));
 console.log(concat([4, 5, 1], [3, 3, 3, 3, 3]));
 
 
-function concat1(arr, arr1) {
-    // return arr.concat(arr1)
-    return [...arr, ...arr1]
-}
-console.log(concat1([1, 3, 5], [2, 6, 8]));
-console.log(concat1([7, 8], [10, 9, 1, 1, 2]));
-console.log(concat1([4, 5, 1], [3, 3, 3, 3, 3]));
 
 
 // 8}
@@ -199,12 +191,9 @@ console.log(findIndex(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"));
 // Math.floor() can be helpful.
 
 function valueAt(arr, index) {
-
-    //     for (let i = Math.floor(index); i < arr.length; i++) {
-    //         return arr[i]
-    //     }
-
-
+    for (let i = Math.floor(index); i < arr.length; i++) {
+        return arr[i]
+    }
 }
 
 console.log(valueAt([1, 2, 3, 4, 5, 6], 10 / 2));
@@ -419,8 +408,6 @@ console.log(arrayValuesTypes([21.1, "float", "array", ["I am array"], null, true
 // ) ➞ false
 
 
-// 19}
-
 function hasSameBread(arr, arr1) {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] === arr || arr[i] === "white bread") {
@@ -445,7 +432,7 @@ console.log(hasSameBread(
     ["brown bread", "cheese", "toast"]
 ));
 
-// 20
+// 19
 
 // Create a function that takes an array of two numbers and checks if the square root of the first number is equal to the cube root of the second number.
 // Examples
@@ -466,7 +453,7 @@ console.log(checkSquareAndCube([4, 8]));
 console.log(checkSquareAndCube([16, 48]));
 console.log(checkSquareAndCube([9, 27]));
 
-// 21
+// 
 
 // Levers are simple machines with a rigid beam and a fulcrum. From the picture below, you can see that there are 3-types of levers: first class, second class and third class.
 // In a first class lever, the fulcrum is situated in the middle with the effort and the load being positioned opposite of each other.
@@ -496,7 +483,7 @@ console.log(determineLever(["e", "l", "f"]));
 console.log(determineLever(["f", "e", "l"]));
 
 
-// 22}
+// 21}
 
 // Create a function which returns the length of a string, WITHOUT using String.length property.
 // length("Hello World") ➞ 11
