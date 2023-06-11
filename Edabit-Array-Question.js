@@ -467,7 +467,7 @@ console.log(nSidedShape(3));
 console.log(nSidedShape(1));
 console.log(nSidedShape(9));
 
-// 24}
+// 23}
 
 // Create a function that takes an array with numbers and return an array with the elements multiplied by two.
 // Examples
@@ -490,7 +490,7 @@ console.log(getMultipliedArr([2, 5, 3]));
 console.log(getMultipliedArr([1, 86, -5]));
 console.log(getMultipliedArr([5, 382, 0]));
 
-// 25}
+// 24}
 
 // Create a function that takes an array of words and transforms it into an array of each word's length.
 // Examples
@@ -511,7 +511,7 @@ console.log(wordLengths(["Halloween", "Thanksgiving", "Christmas"]));
 console.log(wordLengths(["She", "sells", "seashells", "down", "by", "the", "seashore"]));
 
 
-// 26}
+// 25}
 
 // Create a program that will take two arrays of integers, a and b. Each array will consist of 3 positive integers, representing the dimensions of cuboids a and b. Find the difference of the cuboids' volumes.
 // For example, if the parameters passed are ([2, 2, 3], [5, 4, 1]), the volume of a is 12 and the volume of b is 20. Therefore, the function should return 8.
@@ -541,7 +541,7 @@ console.log(findDifference([9, 22, 18], [16, 24, 10]));
 console.log(findDifference([1, 9, 25], [10, 7, 9]));
 console.log(findDifference([7, 6, 16], [26, 9, 26]));
 
-// 27}
+// 26}
 
 // Given an array of integers, determine whether the sum of its elements is even or odd.
 // The return value should be a string ("odd" or "even").
@@ -564,7 +564,7 @@ console.log(evenOrOdd([1]));
 console.log(evenOrOdd([]));
 console.log(evenOrOdd([0, 1, 5]));
 
-// 28}
+// 27}
 
 // Create a function that takes a string and returns a string with spaces in between all of the characters.
 // xamples
@@ -581,7 +581,7 @@ console.log(spaceMeOut("far out"));
 console.log(spaceMeOut("elongated musk"));
 
 
-// 29}
+// 28}
 
 // Given an array, rotate the values clockwise by one (the last value is sent to the first position).
 // Check the examples for a better understanding.
@@ -599,7 +599,7 @@ console.log(rotateByOne([1, 2, 3, 4, 5]));
 console.log(rotateByOne([6, 5, 8, 9, 7]));
 console.log(rotateByOne([20, 15, 26, 8, 4]));
 
-// 30}
+// 29}
 
 // Create a function that takes an array of numbers arr and returns an inverted array.
 // Examples
@@ -614,7 +614,7 @@ console.log(invertArray([1, 2, 3, 4, 5]));
 console.log(invertArray([1, -2, 3, -4, 5]));
 console.log(invertArray([]));
 
-// 31}
+// 30}
 
 // Create a function that returns the selected filename from a path. Include the extension in your answer.
 // Examples
@@ -630,7 +630,7 @@ console.log(getFilename("C:/Projects/pil_tests/ascii/edabit.txt"));
 console.log(getFilename("C:/Users/johnsmith/Music/Beethoven_5.mp3"));
 console.log(getFilename("ffprobe.exe"));
 
-// 32}
+// 31}
 
 // Write a function that returns the sum of elements greater than 5, in the given array .
 // Examples
@@ -646,7 +646,7 @@ console.log(sumFive([1, 5, 20, 30, 4, 9, 18]));
 console.log(sumFive([1, 2, 3, 4]));
 console.log(sumFive([10, 12, 28, 47, 55, 100]));
 
-// 33}
+// 32}
 
 // Create a function that takes an array and returns the sum of all numbers in the array.
 // Examples
@@ -666,7 +666,7 @@ console.log(getSumOfItems([-2, 84, 23]));
 
 
 
-// 34}
+// 33}
 
 // Create a function that returns an array of all the integers between two given numbers start and end.
 // Examples
@@ -686,7 +686,7 @@ console.log(rangeOfNum(2, 4));
 console.log(rangeOfNum(5, 9));
 console.log(rangeOfNum(2, 11));
 
-// 35} 
+// 34} 
 
 // Write a function that takes an array of drinks and returns an array of only drinks with no sugar in them. Drinks that contain sugar (in this challenge) are:
 // cola
@@ -710,7 +710,7 @@ console.log(skipTooMuchSugarDrinks(["fanta", "cola"]));
 console.log(skipTooMuchSugarDrinks(["lemonade", "beer", "water"]));
 
 
-// 37}
+// 35}
 
 // Given an array of numbers, create a function which returns the same array but with each element's index in the array added to itself. This means you add 0 to the number at index 0, add 1 to the number at index 1, etc...
 // Examples
@@ -719,201 +719,273 @@ console.log(skipTooMuchSugarDrinks(["lemonade", "beer", "water"]));
 // addIndexes([5, 4, 3, 2, 1]) ➞[5, 5, 5, addIndexes([0, 0, 0, 0, 0]) ➞[0, 1, 2, 3, 4]
 
 function addIndexes(arr) {
-        return arr.map((a, b) => a + b)
-    }
+    return arr.map((a, b) => a + b)
+}
 
 
 console.log(addIndexes([0, 0, 0, 0, 0]));
-    console.log(addIndexes([1, 2, 3, 4, 5]));
-    console.log(addIndexes([5, 4, 3, 2, 1]));
+console.log(addIndexes([1, 2, 3, 4, 5]));
+console.log(addIndexes([5, 4, 3, 2, 1]));
 
 
-    // 38}
+// 36}
 
-    // n mathematics and digital electronics, a binary number is a number expressed in the base-2 numeral system or binary numeral system. Given an array of ones and zeroes of a binary number, return the equivalent decimal value.
-    // Examples
-    // binaryToDecimal([0, 0, 0, 1]) ➞ 1
-    // binaryToDecimal([0, 0, 1, 0]) ➞ 2
-    // binaryToDecimal([1, 1, 1, 1, 1, 0, 1, 1, 0, 1]) ➞ 1005
+// n mathematics and digital electronics, a binary number is a number expressed in the base-2 numeral system or binary numeral system. Given an array of ones and zeroes of a binary number, return the equivalent decimal value.
+// Examples
+// binaryToDecimal([0, 0, 0, 1]) ➞ 1
+// binaryToDecimal([0, 0, 1, 0]) ➞ 2
+// binaryToDecimal([1, 1, 1, 1, 1, 0, 1, 1, 0, 1]) ➞ 1005
 
 
-    function binaryToDecimal(num) {
-        return parseInt(num.join(""), 2)
+function binaryToDecimal(num) {
+    return parseInt(num.join(""), 2)
 
-    }
+}
 
 
 console.log(binaryToDecimal([0, 0, 0, 1]));
-    console.log(binaryToDecimal([0, 0, 1, 0]));
-    console.log(binaryToDecimal([1, 1, 1, 1, 1, 0, 1, 1, 0, 1]));
+console.log(binaryToDecimal([0, 0, 1, 0]));
+console.log(binaryToDecimal([1, 1, 1, 1, 1, 0, 1, 1, 0, 1]));
 
-    // 39}
+// 37}
 
-    // Create a function that takes an array of strings and numbers, and filters out the array so that it returns an array of integers only.
-    // Examples
-    // filterArray([1, 2, 3, "a", "b", 4]) ➞ [1, 2, 3, 4]
-    // filterArray(["A", 0, "Edabit", 1729, "Python", "1729"]) ➞ [0, 1729]
-    // filterArray(["Nothing", "here"]) ➞ []
+// Create a function that takes an array of strings and numbers, and filters out the array so that it returns an array of integers only.
+// Examples
+// filterArray([1, 2, 3, "a", "b", 4]) ➞ [1, 2, 3, 4]
+// filterArray(["A", 0, "Edabit", 1729, "Python", "1729"]) ➞ [0, 1729]
+// filterArray(["Nothing", "here"]) ➞ []
 
-    function filterArray(arr) {
-        return arr.filter((a) => a < 1730)
-    }
+function filterArray(arr) {
+    return arr.filter((a) => a < 1730)
+}
 
 
 console.log(filterArray([1, 2, 3, "a", "b", 4]));
-    console.log(filterArray(["A", 0, "Edabit", 1729, "Python", "1729"]));
-    console.log(filterArray(["Nothing", "here"]));
+console.log(filterArray(["A", 0, "Edabit", 1729, "Python", "1729"]));
+console.log(filterArray(["Nothing", "here"]));
 
 
-    // 40}
+// 38}
 
-    // Create a function that returns an array of booleans from a given number by iterating through the number one digit at a time and appending true into the array if the digit is 1 and false otherwise.
-    // Examples
-    // integerBoolean("100101") ➞ [true, false, false, true, false, true]
-    // integerBoolean("10") ➞ [true, false]
-    // integerBoolean("001") ➞ [false, false, true]
+// Create a function that returns an array of booleans from a given number by iterating through the number one digit at a time and appending true into the array if the digit is 1 and false otherwise.
+// Examples
+// integerBoolean("100101") ➞ [true, false, false, true, false, true]
+// integerBoolean("10") ➞ [true, false]
+// integerBoolean("001") ➞ [false, false, true]
 
-    function integerBoolean(str) {
-        return str.split('').map(function (x) {
-            return x === '1'
-        })
-    }
+function integerBoolean(str) {
+    return str.split('').map(function (x) {
+        return x === '1'
+    })
+}
 console.log(integerBoolean("100101"));
-    console.log(integerBoolean("10"));
-    console.log(integerBoolean("001"));
+console.log(integerBoolean("10"));
+console.log(integerBoolean("001"));
 
 
 
 
-    // 41}
+// 39}
 
-    // Given a letter and an array of words, return whether the letter does not appear in any of the words.
-    // Examples
-    // forbiddenLetter("r", ["rock", "paper", "scissors"]) ➞ false
-    // forbiddenLetter("a", ["spoon", "fork", "knife"]) ➞ true
-    // forbiddenLetter("m", []) ➞ true
+// Given a letter and an array of words, return whether the letter does not appear in any of the words.
+// Examples
+// forbiddenLetter("r", ["rock", "paper", "scissors"]) ➞ false
+// forbiddenLetter("a", ["spoon", "fork", "knife"]) ➞ true
+// forbiddenLetter("m", []) ➞ true
 
-    function forbiddenLetter(a, arr) {
-        return arr.every(function (word) {
-            return !word.includes(a)
-        })
-    }
+function forbiddenLetter(a, arr) {
+    return arr.every(function (word) {
+        return !word.includes(a)
+    })
+}
 console.log(forbiddenLetter("r", ["rock", "paper", "scissors"]));
-    console.log(forbiddenLetter("a", ["spoon", "fork", "knife"]));
-    console.log(forbiddenLetter("m", []));
+console.log(forbiddenLetter("a", ["spoon", "fork", "knife"]));
+console.log(forbiddenLetter("m", []));
 
-    // 42}
+// 40}
 
-    // Create a function that takes a year as an argument and returns the corresponding Chinese zodiac.
+// Create a function that takes a year as an argument and returns the corresponding Chinese zodiac.
 
-    //     Examples
-    // chineseZodiac(2021) ➞ "Ox"
+//     Examples
+// chineseZodiac(2021) ➞ "Ox"
 
-    // chineseZodiac(2020) ➞ "Rat"
+// chineseZodiac(2020) ➞ "Rat"
 
-    // chineseZodiac(1933) ➞ "Rooster"
-    // Notes
-    // The list of animals used can vary slightly, so check the Resources tab for the list that you will need for this challenge.
+// chineseZodiac(1933) ➞ "Rooster"
+// Notes
+// The list of animals used can vary slightly, so check the Resources tab for the list that you will need for this challenge.
 
-    function chineseZodiac(year) {
-        const obj1 = {
-            2021: "0x",
-            2020: "Rat",
-            1933: "Rooster",
-        }
-        return obj1[year]
+function chineseZodiac(year) {
+    const obj1 = {
+        2021: "0x",
+        2020: "Rat",
+        1933: "Rooster",
     }
+    return obj1[year]
+}
 
 console.log(chineseZodiac(2021));
-    console.log(chineseZodiac(2020));
-    console.log(chineseZodiac(1933));
+console.log(chineseZodiac(2020));
+console.log(chineseZodiac(1933));
 
 
 
 
-    // // 43}
+// // 41}
 
-    // // Write a function that accepts the width and height (m, n) and an optional proc s and generates an array with m elements. Each element is a string consisting of either:
+// // Write a function that accepts the width and height (m, n) and an optional proc s and generates an array with m elements. Each element is a string consisting of either:
 
-    // The default character (hash #) repeating n times (if no proc is given).
-    // The character passed in through the proc repeating n times.
-    // Examples
-    // makeRug(3, 5) ➞ [
-    //   "#####",
-    //   "#####",
-    //   "#####"
-    // ]
+// The default character (hash #) repeating n times (if no proc is given).
+// The character passed in through the proc repeating n times.
+// Examples
+// makeRug(3, 5) ➞ [
+//   "#####",
+//   "#####",
+//   "#####"
+// ]
 
-    // makeRug(3, 5, '$')  ➞ [
-    //   "$$$$$",I
-    //   "$$$$$",
-    //   "$$$$$"
-    // ]
+// makeRug(3, 5, '$')  ➞ [
+//   "$$$$$",I
+//   "$$$$$",
+//   "$$$$$"
+// ]
 
-    // makeRug(2, 2, 'A')  ➞ [
-    //   "AA",
-    //   "AA"
-    // // ]
+// makeRug(2, 2, 'A')  ➞ [
+//   "AA",
+//   "AA"
+// // ]
 
-    function makeRug(m, n, s = '#') {
-        let a = [3, 2];
-        for (let i = 0; i < m; i++) a.push(s.repeat(n))
-        return a;
-    }
+function makeRug(m, n, s = '#') {
+    let a = [3, 2];
+    for (let i = 0; i < m; i++) a.push(s.repeat(n))
+    return a;
+}
 
 console.log(makeRug(3, 5));
-    console.log(makeRug(3, 5, '$'));
-    console.log(makeRug(2, 2, 'A'));
+console.log(makeRug(3, 5, '$'));
+console.log(makeRug(2, 2, 'A'));
 
 
 
-    // 44}
+// 42}
 
 
-    // // Create a function that takes two arguments of an array of numbers arr and a constant number n and returns the n largest numbers from the given array.
+// // Create a function that takes two arguments of an array of numbers arr and a constant number n and returns the n largest numbers from the given array.
 
-    // // Examples
-    // // largestNumbers(2, [4, 3, 2, 1]) ➞ [3, 4]
+// // Examples
+// // largestNumbers(2, [4, 3, 2, 1]) ➞ [3, 4]
 
-    // // largestNumbers(1, [7, 19, 4, 2]) ➞ [19]
+// // largestNumbers(1, [7, 19, 4, 2]) ➞ [19]
 
-    // // largestNumbers(3, [14, 12, 57, 11, 18, 16]) ➞ [16, 18, 57]
+// // largestNumbers(3, [14, 12, 57, 11, 18, 16]) ➞ [16, 18, 57]
 
-    // // largestNumbers(0, [1, 3, 4, 2]) ➞ []
+// // largestNumbers(0, [1, 3, 4, 2]) ➞ []
 
-    function largestNumbers(n, arr) {
-        return n == 0 ? arr : arr.sort((x, y) => x - y).slice(-n)
+function largestNumbers(n, arr) {
+    return n == 0 ? arr : arr.sort((x, y) => x - y).slice(-n)
 
-    }
+}
 console.log(largestNumbers(2, [4, 3, 2, 1]));
-    console.log(largestNumbers(1, [7, 19, 4, 2]));
-    console.log(largestNumbers(3, [14, 12, 57, 11, 18, 16]));
-    console.log(largestNumbers(0, [1, 3, 4, 2]));
+console.log(largestNumbers(1, [7, 19, 4, 2]));
+console.log(largestNumbers(3, [14, 12, 57, 11, 18, 16]));
+console.log(largestNumbers(0, [1, 3, 4, 2]));
 
 
-    // 45}
+// 43}
 
-    // Create a function that takes a 2D array arr and returns the sum of the minimum value in each row.
+// Create a function that takes a 2D array arr and returns the sum of the minimum value in each row.
 
-    // Examples
-    // sumMinimums([
-    //   [1, 2, 3, 4, 5],
-    //   [5, 6, 7, 8, 9],
-    //   [20, 21, 34, 56, 100]
-    // ]) ➞ 26
+// Examples
+// sumMinimums([
+//   [1, 2, 3, 4, 5],
+//   [5, 6, 7, 8, 9],
+//   [20, 21, 34, 56, 100]
+// ]) ➞ 26
 
-    // minimum value of the first row is 1
-    // minimum value of the second row is 5
-    // minimum value of the third row is 20
+// minimum value of the first row is 1
+// minimum value of the second row is 5
+// minimum value of the third row is 20
 
 
 
-    function sumMinimums(arr) {
-        const echmin = arr.reduce((acc, val) => {
-            acc.push(Math.min(...val))
-            return acc
-        }, [])
-        return echmin
-    }
+function sumMinimums(arr) {
+    const echmin = arr.reduce((acc, val) => {
+        acc.push(Math.min(...val))
+        return acc
+    }, [])
+    return echmin
+}
 
 console.log(sumMinimums([[1, 2, 3, 4, 5], [5, 6, 7, 8, 9], [20, 21, 34, 56, 100]]))
+
+
+// 44}
+
+// Create a function that takes an array. This array will contain numbers represented as strings.
+// Your function should split this array into two new arrays. The first array should contain only even numbers. The second only odd. Then, wrap these two arrays in one main array and return it.
+// Return an empty array if there are no even numbers, or odd.
+// Examples
+// cleanUpArray(["8"]) ➞ [[8], []]
+// cleanUpArray(["11"]) ➞ [[], [11]]
+// cleanUpArray(["7", "4", "8"]) ➞ [[4, 8], [7]]
+// cleanUpArray(["9", "4", "5", "8"]) ➞ [[4, 8], [9, 5]]
+
+
+function cleanUpArray(arr) {
+    return arr.reduce(function (a, b) {
+        var main = b % 2 === 0 ? a[0] : a[1];
+        main.push(parseInt(b));
+        return a;
+    }, [[], []]);
+}
+
+console.log(cleanUpArray(["8"]));
+console.log(cleanUpArray(["11"]));
+console.log(cleanUpArray(["7", "4", "8"]));
+console.log(cleanUpArray(["9", "4", "5", "8"]));
+
+
+// 45}
+
+// Create a function that finds each factor of a given number n.Your solution should return an array of the number(s) that meet this criteria.
+//     Examples
+// findFactors(9) ➞[1, 3, 9]
+// // 9 has three factors 1, 3 and 9
+// findFactors(12) ➞[1, 2, 3, 4, 6, 12]
+// findFactors(20) ➞[1, 2, 4, 5, 10, 20]
+// findFactors(0) ➞[]
+// 0 has no factors
+
+function findFactors(num) {
+    return Array.from(Array(num + 1).keys()).filter(function (factor) {
+        return num % factor === 0
+    })
+}
+
+console.log(findFactors(9));
+console.log(findFactors(12));
+console.log(findFactors(20));
+console.log(findFactors(0));
+
+
+// 46}
+
+// Create a function that determines the age difference between spouses in a household. The ages ages in years of the parents and their children are given in an array.
+// If there is no difference in age between the parents, return "No age difference between spouses.". Otherwise, return the difference in years. Check the examples for more clarification.
+// Examples
+// ageDifference([29, 1, 6, 8, 28]) ➞ "1 year"
+// ageDifference([43, 86, 49, 86]) ➞ "No age difference between spouses."
+// ageDifference([2, 4, 6, 32, 27]) ➞ "5 years"
+
+function ageDifference(ages) {
+    const maxAge = Math.max(...ages);
+    const minAge = Math.min(...ages);
+
+    const ageDiff = maxAge - minAge;
+
+    return ageDiff === 0 ? "No age difference between spouses." : ageDiff + " year";
+}
+
+console.log(ageDifference([29, 1, 6, 8, 28]));
+console.log(ageDifference([43, 86, 49, 86]));
+console.log(ageDifference([2, 4, 6, 32, 27]));
