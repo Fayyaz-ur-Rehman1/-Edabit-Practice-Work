@@ -70,7 +70,13 @@ console.log(reverse1([]));
 
 
 function incrementItems1(arr) {
-    return arr.map(eml => eml + 1)
+
+    // return arr.map(eml => eml + 1)
+
+    return arr.reduce(function (acc, curr) {
+        acc.push(curr + 1)
+        return acc
+    }, [])
 }
 
 console.log(incrementItems1([0, 1, 2, 3]));
@@ -91,8 +97,10 @@ console.log(incrementItems1([-1, -2, -3, -4]));
 
 
 function getLastItem(arr) {
-    //    return arr.pop()
-    return arr.at(-1)
+return arr.pop()
+return arr.at(-1)
+return arr[-1]
+return arr.length - 1
 }
 
 console.log(getLastItem([1, 2, 3]));
@@ -121,8 +129,19 @@ console.log(arrayToString(["a", "b", "c", "d", "e", "f"]));
 console.log(arrayToString([1, 2, 3, "a", "s", "dAAAA"]));
 
 
-
 // 7}
+
+
+function concat1(arr, arr1) {
+    // return arr.concat(arr1)
+    return [...arr, ...arr1]
+}
+console.log(concat1([1, 3, 5], [2, 6, 8]));
+console.log(concat1([7, 8], [10, 9, 1, 1, 2]));
+console.log(concat1([4, 5, 1], [3, 3, 3, 3, 3]));
+
+
+// 8}
 // Create a function that takes an array and a string as arguments and returns the index of the string.
 // Examples
 // findIndex(["hi", "edabit", "fgh", "abc"], "fgh") ➞ 2
@@ -142,7 +161,7 @@ console.log(findIndex1(["a", "g", "y", "d"], "d"));
 console.log(findIndex1(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"));
 
 
-// 8}  
+// 9}  
 
 // Given an index and an array, return the value of the array with the given index.
 // Examples
@@ -154,9 +173,10 @@ console.log(findIndex1(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"));
 
 
 function valueAt1(arr, word) {
-    const currentIndex = Math.floor(word)
-    return arr[currentIndex]
-    // return arr.at(word)
+const currentIndex = Math.floor(word)
+return arr[currentIndex]
+return arr.at(word)
+return arr[Math.floor(word)]
 }
 
 console.log(valueAt1([1, 2, 3, 4, 5, 6], 10 / 2));
@@ -164,7 +184,7 @@ console.log(valueAt1([1, 2, 3, 4, 5, 6], 8.0 / 2));
 console.log(valueAt1([1, 2, 3, 4], 6.535355314 / 2));
 
 
-// 9}
+// 10}
 // Create a function that finds the index of a given item.
 // Examples
 // search([1, 5, 3], 5) ➞ 1
@@ -176,14 +196,15 @@ console.log(valueAt1([1, 2, 3, 4], 6.535355314 / 2));
 
 
 function search1(arr, index) {
-    return arr.indexOf(index)
+    // return arr.indexOf(index)
+    return arr.lastIndexOf(index)
 }
 console.log(search1([1, 5, 3], 5));
 console.log(search1([9, 8, 3], 3));
 console.log(search1([1, 2, 3], 4));
 
 
-// 10}
+// 11}
 
 // Fix the code in the code tab to pass this challenge (only syntax errors). Look at the examples below to get an idea of what the function should do.
 // Examples
@@ -201,7 +222,7 @@ console.log(sumArray([1, 2, 3, 4, 5]));
 console.log(sumArray([-1, 0, 1]));
 console.log(sumArray([0, 4, 8, 12]));
 
-// 11}
+// 12}
 
 // Create a function that searches for the index of a given item in an array. If the item is present, it should return the index, otherwise, it should return -1.
 // Examples
@@ -218,10 +239,13 @@ console.log(search([1, 2, 3, 4], 3));
 console.log(search([2, 4, 6, 8, 10], 8));
 console.log(search([1, 3, 5, 7, 9], 11));
 
-// 12}
+// 13}
 
-function check(arr, include) {
-    return arr.includes(include)
+
+function check(arr, arr1) {
+    // return arr.includes(arr1)
+    // return arr.some(element => element === arr1);
+    // return arr.indexOf(arr1) !== -1
 }
 
 console.log(check([1, 2, 3, 4, 5], 3));
@@ -229,7 +253,7 @@ console.log(check([1, 1, 2, 1, 1], 3));
 console.log(check([5, 5, 5, 6], 5));
 console.log(check([], 5));
 
-// 13}
+// 14}
 
 // Create a function that takes an array of integers and strings. Convert integers to strings and return the new array.
 // Examples
@@ -249,7 +273,7 @@ console.log(parseArray([1, 2, 3, 17, 24, 3, "a", "123b"]));
 console.log(parseArray([]));
 
 
-// 14}
+// 15}
 
 // Create a function that takes two numbers num1, num2, and an array arr and returns an array containing all the numbers in arr greater than num1 and less than num2.
 // Examples
@@ -265,7 +289,7 @@ console.log(arrBetween(3, 8, [1, 5, 95, 0, 4, 7]));
 console.log(arrBetween(1, 10, [1, 10, 25, 8, 11, 6]));
 console.log(arrBetween(7, 32, [1, 2, 3, 78]));
 
-// 15}
+// 16}
 
 // Create a function that takes as a parameter an array of "stringified" numbers and returns an array of numbers.
 // Example:
@@ -286,7 +310,7 @@ console.log(toNumberArray(["91", "44"]));
 console.log(toNumberArray(["9.5", "8.8"]));
 
 
-// 16}
+// 17}
 
 // Create a function that takes an array and returns the types of values (data types) in a new array.
 // Examples
@@ -306,7 +330,7 @@ console.log(arrayValuesTypes(["214", true, false, 2, 2.15, [], null]));
 console.log(arrayValuesTypes([21.1, "float", "array", ["I am array"], null, true, 214]));
 
 
-// 17}
+// 18}
 
 // Given two arrays, which represent two sandwiches, return whether both sandwiches use the same type of bread. The bread will always be found at the start and end of the array.
 
@@ -329,7 +353,7 @@ console.log(arrayValuesTypes([21.1, "float", "array", ["I am array"], null, true
 
 function hasSameBread(arr, arr1) {
     // return arr.at(0) === arr1.at(0) && arr.at(-1) === arr1.at(-1)
-    return arr[0] === arr1[0] && arr[arr.length - 1] === arr1[arr1.length - 1]
+    return arr[0] === arr1[0] && arr[arr.length - 1] === arr1[arr1.length - 1] 
 }
 
 console.log(hasSameBread(
@@ -345,7 +369,7 @@ console.log(hasSameBread(
     ["brown bread", "cheese", "toast"]
 ));
 
-// 18}
+// 19}
 
 // Create a function that takes an array of two numbers and checks if the square root of the first number is equal to the cube root of the second number.
 // Examples
@@ -361,7 +385,7 @@ console.log(checkSquareAndCube([4, 8]));
 console.log(checkSquareAndCube([16, 48]));
 console.log(checkSquareAndCube([9, 27]));
 
-// 19}
+// 20}
 
 // Levers are simple machines with a rigid beam and a fulcrum.From the picture below, you can see that there are 3 - types of levers: first class, second class and third class.
 // In a first class lever, the fulcrum is situated in the middle with the effort and the load being positioned opposite of each other.
