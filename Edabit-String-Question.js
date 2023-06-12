@@ -62,7 +62,9 @@ console.log(nameString("javaScript"));
 function boolToString(str) {
     // return str.toString()
     // return str + ""
-    return `${str}`
+    // return `${str}`
+    let strbool = str ? "true" : "false";
+    return strbool
 }
 console.log(boolToString(true));
 console.log(boolToString(false));
@@ -117,8 +119,13 @@ console.log(greeting("Mubashir"));
 
 
 function comp(str, str1) {
-    return str.length === str1.length
+    // return str.length === str1.length
+    if (str.length === str1.length) {
+        return true
+    }
+    return false
 }
+
 
 console.log(comp("AB", "CD"));
 console.log(comp("ABC", "DE"));
@@ -138,3 +145,18 @@ function isEmpty(str) {
 console.log(isEmpty(""));
 console.log(isEmpty(" "));
 console.log(isEmpty("a")); 
+
+// / 9}
+
+// Write a template string according to the following example:
+// Example
+// const a = "John";
+// const b = "Joe";
+// const c = "Jack";
+// const template = "your template string" ➞ "Their names were:  John,  Joe  and  Jack."
+
+const a = "John";
+const b = "Joe";
+const c = "Jack";
+
+console.log(`Their names were : ${a}, ${b} and ${c}`);
