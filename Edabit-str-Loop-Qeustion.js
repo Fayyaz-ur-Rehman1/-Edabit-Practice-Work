@@ -113,10 +113,10 @@ console.log(longBurp(9));
 
 function modifyLast(str, num) {
     let main = "";
-    for(let i = 0 ; i < str.length-1 ; i++){
+    for (let i = 0; i < str.length - 1; i++) {
         main += str[i]
     }
-    main += str[str.length -1].repeat(num)
+    main += str[str.length - 1].repeat(num)
     return main
 }
 
