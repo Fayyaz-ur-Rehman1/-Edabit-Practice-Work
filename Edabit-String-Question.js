@@ -450,4 +450,416 @@ function frontThree(str) {
 }
 console.log(frontThree("Python"));
 console.log(frontThree("Cucumber"));
-console.log(frontThree("bioshock")); 
+console.log(frontThree("bioshock"));
+
+// 25}
+
+// Create a function that takes a string txt and a number n and returns the repeated string n number of times.
+// If given argument txt is not a string, return Not A String !!
+// Examples
+// repeatString("Mubashir", 2) ➞ "MubashirMubashir"
+// repeatString("Matt", 3) ➞ "MattMattMatt"
+// repeatString(1990, 7) ➞ "Not A String !!"
+
+function repeatString(str, num) {
+    return str === 1990 ? "Not A String !!" : str.repeat(num)
+}
+
+console.log(repeatString("Mubashir", 2));
+console.log(repeatString("Matt", 3));
+console.log(repeatString(1990, 7));
+
+// 26}
+
+// Luke Skywalker has family and friends. Help him remind them who is who. Given a string with a name, return the relation of that person to Luke.
+// Person	Relation
+// Darth Vader	father
+// Leia	sister
+// Han	brother in law
+// R2D2	droid
+// Examples
+// relationToLuke("Darth Vader") ➞ "Luke, I am your father."
+// relationToLuke("Leia") ➞ "Luke, I am your sister."
+// relationToLuke("Han") ➞ "Luke, I am your brother in law."
+
+function relationToLuke(str) {
+    switch (str) {
+
+        case "Darth Vander":
+            return "Luke, I am your father"
+
+        case "Leia":
+            return "Luke, I am your sister"
+
+        case "Han":
+            return "Luke, I am your brother in law"
+    }
+}
+
+console.log(relationToLuke("Darth Vader"));
+console.log(relationToLuke("Leia"));
+console.log(relationToLuke("Han"));
+
+// 27}
+
+// Create a function that takes an object as an argument and returns a string with facts about the city. The city facts will need to be extracted from the object's three properties:
+// name
+// population
+// continent
+// The string should have the following format: X has a population of Y and is situated in Z (where X is the city name, Y is the population and Z is the continent the city is situated in).
+// Examples
+// cityFacts({
+//   name: "Paris",
+//   population: "2,140,526",
+//   continent: "Europe"
+// }) ➞ "Paris has a population of 2,140,526 and is situated in Europe"
+// cityFacts({
+//   name: "Tokyo",
+//   population: "13,929,286",
+//   continent: "Asia"
+// }) ➞ "Tokyo has a population of 13,929,286 and is situated in Asia"
+
+
+function cityFacts(obj) {
+    return `${obj.name} has a population of ${obj.population} is situated in ${obj.continent}`
+}
+
+console.log(cityFacts({
+    name: "Paris",
+    population: "2,140,526",
+    continent: "Europe"
+}));
+
+console.log(cityFacts({
+    name: "Tokyo",
+    population: "13,929,286",
+    continent: "Asia"
+}));
+
+
+// 28}
+
+// Create a function that takes in a word and determines whether or not it is plural. A plural word is one that ends in "s".
+// Examples
+// isPlural("changes") ➞ true
+// isPlural("change") ➞ false
+// isPlural("dudes") ➞ true
+// isPlural("magic") ➞ false
+
+function isPlural(str) {
+    return str.includes("s")
+}
+
+console.log(isPlural("changes"));
+console.log(isPlural("change"));
+console.log(isPlural("dudes"));
+console.log(isPlural("magic"));
+
+// 29}
+
+// Create a function that takes a string and returns the concatenated first and last character.
+// Examples
+// firstLast("ganesh") ➞ "gh"
+// firstLast("kali") ➞ "ki"
+// firstLast("shiva") ➞ "sa"
+// firstLast("vishnu") ➞ "vu"
+// firstLast("durga") ➞ "da"
+
+function firstLast(str) {
+    return str[0] + str[str.length - 1]
+}
+console.log(firstLast("ganesh"));
+console.log(firstLast("kali"));
+console.log(firstLast("shiva"));
+console.log(firstLast("vishnu"));
+console.log(firstLast("durga"));
+
+// 30}
+
+// Write a function that stutters a word as if someone is struggling to read it. The first two letters are repeated twice with an ellipsis ... and space after each, and then the word is pronounced with a question mark ?.
+// Examples
+// stutter("incredible") ➞ "in... in... incredible?"
+// stutter("enthusiastic") ➞ "en... en... enthusiastic?"
+// stutter("outstanding") ➞ "ou... ou... outstanding?"
+
+
+function stutter(str) {
+    return `in... in... ${str} ?`
+}
+
+console.log(stutter("incredible"));
+console.log(stutter("enthusiastic"));
+console.log(stutter("outstanding"));
+
+// 31
+
+// For this challenge, you will NOT be given a string. Your task isn't to add "Do not" before the given string. If there is no given string, you will not return "Do not do anything." Do not check the examples to know how to do this challenge.
+// Examples
+// reversePsychology("wash the dishes") ➞ "Do not wash the dishes."
+// reversePsychology("eat your lunch") ➞ "Do not eat your lunch."
+// reversePsychology("go to school") ➞ "Do not go to school."
+
+function reversePsychology(str) {
+    // return "Do not " + str
+    return `Do not ${str}`
+}
+
+console.log(reversePsychology("wash the dishes"));
+console.log(reversePsychology("eat your lunch"));
+console.log(reversePsychology("go to school"));
+
+// 32}
+
+// Given a fraction as a string, return whether or not it is greater than 1 when evaluated.
+// Examples
+// greaterThanOne("1/2") ➞ false
+// greaterThanOne("7/4") ➞ true
+// greaterThanOne("10/10") ➞ false
+
+function greaterThanOne(str) {
+    return eval(str) > 1
+}
+
+console.log(greaterThanOne("1/2"));
+console.log(greaterThanOne("7/4"));
+console.log(greaterThanOne("10/10"));
+
+// 33}
+
+// reate a function that takes in a current mood and return a sentence in the following format: "Today, I am feeling {mood}". However, if no argument is passed, return "Today, I am feeling neutral".
+// Examples
+// moodToday("happy") ➞ "Today, I am feeling happy"
+// moodToday("sad") ➞ "Today, I am feeling sad"
+// moodToday() ➞ "Today, I am feeling neutral"
+
+function moodToday(str) {
+    return `Today I am feeling  ${str === undefined ? "neutral" : str}`;
+}
+
+console.log(moodToday("happy"));
+console.log(moodToday("sad"));
+console.log(moodToday());
+
+// 34}
+
+// Create a function that returns the number of syllables in a simple string. The string is made up of short repeated words like "Lalalalalalala" (which would have 7 syllables).
+// Examples
+// countSyllables("Hehehehehehe") ➞ 6
+// countSyllables("bobobobobobobobo") ➞ 8
+// countSyllables("NANANA") ➞ 3
+
+function countSyllables(str) {
+    return str.length / 2
+}
+
+console.log(countSyllables("Hehehehehehe"));
+console.log(countSyllables("bobobobobobobobo"));
+console.log(countSyllables("NANANA"));
+
+// 35}
+
+// Create a function that returns the ASCII value of the passed in character.
+// Examples
+// ctoa("A") ➞ 65
+// ctoa("m") ➞ 109
+// ctoa("[") ➞ 91
+// ctoa("\") ➞ 92
+// Notes
+// Don't forget to return the result.
+// If you get stuck on a challenge, find help in the Resources tab.
+// If you're really stuck, unlock solutions in the Solutions tab.
+
+function ctoa(arr) {
+    // return arr.codePointAt()
+    return arr.charCodeAt()
+}
+
+console.log(ctoa("A"));
+console.log(ctoa("m"));
+console.log(ctoa("["));
+console.log(ctoa("/"));
+
+// 36}
+
+// Write a function that validates whether two strings are identical. Make it case insensitive.
+// Examples
+// match("hello", "hELLo") ➞ true
+// match("motive", "emotive") ➞ false
+// match("venom", "VENOM") ➞ true
+// match("mask", "mAskinG") ➞ false
+
+function match(str, str1) {
+    return str.length === str1.length ? true : false
+}
+
+console.log(match("hello", "hELLo"));
+console.log(match("motive", "emotive"));
+console.log(match("venom", "VENOM"));
+console.log(match("mask", "mAskinG"));
+
+// 37}
+
+// Create a function that takes a string and changes the word amazing to not amazing. Return the string without any change if the word edabit is part of the string.
+// Examples
+// amazingEdabit("edabit is amazing.") ➞ "edabit is amazing."
+// amazingEdabit("Mubashir is amazing.") ➞ "Mubashir is not amazing."
+// amazingEdabit("Infinity is amazing.") ➞ "Infinity is not amazing."
+
+
+function amazingEdabit(str) {
+    let ar = str.split(" ")
+    return ar[0] === "edabit" ? `${ar[0]} is amazing` : `${ar[0]} is not amazing`
+}
+
+console.log(amazingEdabit("edabit is amazing."));
+console.log(amazingEdabit("Mubashir is amazing."));
+console.log(amazingEdabit("Infinity is amazing."));
+
+// 38}
+
+// Create a function that checks if the argument is an integer or a string. Return "int" if it's an integer and "str" if it's a string.
+// Examples
+// intOrString(8) ➞ "int"
+// intOrString("Hello") ➞ "str"
+// intOrString(9843532) ➞ "int"
+
+function intOrString(str) {
+    return typeof str === "number" ? "int" : "str"
+}
+
+console.log(intOrString(8));
+console.log(intOrString("Hello"));
+console.log(intOrString(9843532));
+
+// 39
+
+// Write a function that takes an integer and:
+
+// If the number is a multiple of 3, return "Hello".
+// If the number is a multiple of 5, return "World".
+// If the number is a multiple of both 3 and 5, return "Hello World".
+// Examples
+// helloWorld(3) ➞ "Hello"
+// helloWorld(5) ➞ "World"
+// helloWorld(15) ➞ "Hello World"
+
+function helloWorld(num) {
+    if (num % 15 === 0) return "Hello World";
+    if (num % 3 === 0) return "Hello";
+    if (num % 5 === 0) return "world";
+}
+
+console.log(helloWorld(3));
+console.log(helloWorld(5));
+console.log(helloWorld(15));
+
+// 40}
+
+// Write two functions:
+
+// toInt() : A function to convert a string to an integer.
+// toStr() : A function to convert an integer to a string.
+// Examples
+// toInt("77") ➞ 77
+// toInt("532") ➞ 532
+// toStr(77) ➞ "77"
+// toStr(532) ➞ "532"
+
+function toInt(int) {
+    return Number(int)
+}
+function toStr(str) {
+    return str.toString()
+}
+
+console.log(toInt("77"));
+console.log(toInt("532"));
+console.log(toStr(77));
+console.log(toStr(532));
+
+// 41}
+
+// Create a function that returns the string "Burp" with the amount of "r's" determined by the input parameters of the function.
+// Examples
+// longBurp(3) ➞ "Burrrp"
+// longBurp(5) ➞ "Burrrrrp"
+// longBurp(9) ➞ "Burrrrrrrrrp"
+
+
+function longBurp(num) {
+    return "Bu" + "r".repeat(num) + "p";
+}
+
+console.log(longBurp(3));
+console.log(longBurp(5));
+console.log(longBurp(9));
+
+// 42}
+
+// Create a function that takes a string and returns a string with spaces in between all of the characters.
+// Examples
+// spaceMeOut("space") ➞ "s p a c e"
+// spaceMeOut("far out") ➞ "f a r   o u t"
+// spaceMeOut("elongated musk") ➞ "e l o n g a t e d   m u s k"
+
+function spaceMeOut(str) {
+    return str.split("").join(" ")
+}
+
+console.log(spaceMeOut("space"));
+console.log(spaceMeOut("far out"));
+console.log(spaceMeOut("elongated musk"));
+
+// 43}
+
+// Create a function that counts how many D's are in a sentence.
+// Examples
+// countDs("My friend Dylan got distracted in school.") ➞ 4
+// countDs("Debris was scattered all over the yard.") ➞ 3
+// countDs("The rodents hibernated in their den.") ➞ 3
+
+function countDs(str) {
+    let str1 = str.match("/d/gi");
+    return str1 ? str1.length : 0
+}
+console.log(countDs("My friend Dylan got distracted in school."));
+console.log(countDs("Debris was scattered all over the yard."));
+console.log(countDs("The rodents hibernated in their den."));
+
+// 44}
+
+// Create a function which makes the last character of a string repeat n number of times.
+// Examples
+// modifyLast("Hello", 3) ➞ "Hellooo"
+// modifyLast("hey", 6) ➞ "heyyyyyy"
+// modifyLast("excuse me what?", 5) ➞ "excuse me what?????"
+
+function modifyLast(str, num) {
+    let word = str[str.length - 1]
+    let modifyword = word.repeat(num)
+    let strmodify = str.slice(0, -1) + modifyword
+    return strmodify
+}
+
+console.log(modifyLast("Hello", 3));
+console.log(modifyLast("hey", 6));
+console.log(modifyLast("excuse me what?", 5));
+
+
+// 45}
+
+// Create a function that will put the first argument, a character, between every word in the second argument, a string.
+// Examples
+// add("R", "javascript is fun") ➞ "javascriptRisRfun"
+// add("#", "hello world!") ➞ "hello#world!"
+// add("#", " ") ➞ "#"
+
+function add(char, str) {
+    let words = str.split(" ");
+    let modifiedStr = words.join(char);
+    return modifiedStr;
+}
+
+console.log(add("R", "javascript is fun"));
+console.log(add("#", "hello world!"));
+console.log(add("#", " ")); 
