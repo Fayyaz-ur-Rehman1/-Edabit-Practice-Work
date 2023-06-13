@@ -59,4 +59,67 @@ function frontThree(str) {
 }
 console.log(frontThree("Python"));
 console.log(frontThree("Cucumber"));
-console.log(frontThree("bioshock")); 
+console.log(frontThree("bioshock"));
+
+// 25}
+
+// Create a function that takes a string txt and a number n and returns the repeated string n number of times.
+// If given argument txt is not a string, return Not A String !!
+// Examples
+// repeatString("Mubashir", 2) ➞ "MubashirMubashir"
+// repeatString("Matt", 3) ➞ "MattMattMatt"
+// repeatString(1990, 7) ➞ "Not A String !!"
+
+function repeatString(str, num) {
+    if (typeof str === 'number') return "Not A String !!";
+    for (let i = 1; i < num; i++) {
+        str += str
+    }
+    return str
+}
+
+console.log(repeatString("Mubashir", 2));
+console.log(repeatString("Matt", 3));
+console.log(repeatString(1990, 7));
+
+
+// 41}
+
+// Create a function that returns the string "Burp" with the amount of "r's" determined by the input parameters of the function.
+// Examples
+// longBurp(3) ➞ "Burrrp"
+// longBurp(5) ➞ "Burrrrrp"
+// longBurp(9) ➞ "Burrrrrrrrrp"
+
+function longBurp(count) {
+    let str = 'Bu';
+    for (let i = 0; i < count; i++) {
+        str += 'r';
+    }
+    return str + 'p'
+}
+console.log(longBurp(3));
+console.log(longBurp(5));
+console.log(longBurp(9));
+
+
+// 44}
+
+// Create a function which makes the last character of a string repeat n number of times.
+// Examples
+// modifyLast("Hello", 3) ➞ "Hellooo"
+// modifyLast("hey", 6) ➞ "heyyyyyy"
+// modifyLast("excuse me what?", 5) ➞ "excuse me what?????"
+
+function modifyLast(str, num) {
+    let main = "";
+    for(let i = 0 ; i < str.length-1 ; i++){
+        main += str[i]
+    }
+    main += str[str.length -1].repeat(num)
+    return main
+}
+
+console.log(modifyLast("Hello", 3));
+console.log(modifyLast("hey", 6));
+console.log(modifyLast("excuse me what?", 5)); 
