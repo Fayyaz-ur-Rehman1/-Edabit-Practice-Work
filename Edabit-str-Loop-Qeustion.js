@@ -122,4 +122,32 @@ function modifyLast(str, num) {
 
 console.log(modifyLast("Hello", 3));
 console.log(modifyLast("hey", 6));
-console.log(modifyLast("excuse me what?", 5)); 
+console.log(modifyLast("excuse me what?", 5));
+
+
+// 46}
+
+// After an amazing performance, the crowd goes wild! People clap enthusiastically and most claps overlap with each other to create one homogeneous sound.
+// An overlapped clap is a clap which starts but doesn't finish, as in "ClaClap" (The first clap is cut short and there are overall 2 claps)
+// Given a string of what the overlapping claps sounded like, return how many claps were made in total.
+// Examples
+// countClaps("ClaClaClaClap!") ➞ 4
+// countClaps("ClClClaClaClaClap!") ➞ 6
+// countClaps("CCClaClClap!Clap!ClClClap!") ➞ 9
+
+function countClaps(str) {
+    let sum = 0;
+    for (let i = 0; i < str.length; i++) {
+        const currentElement = str[i]
+        if (currentElement === "C") {
+            sum += 1
+        }
+    }
+    return sum
+
+}
+
+console.log(countClaps("ClaClaClaClap!"));
+console.log(countClaps("ClClClaClaClaClap!"));
+console.log(countClaps("CCClaClClap!Clap!ClClClap!")); 
+
