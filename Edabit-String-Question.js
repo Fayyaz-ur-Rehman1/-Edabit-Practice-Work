@@ -102,7 +102,7 @@ console.log(calculator("49/7*2-3"));
 function stringInt(str) {
     return Number(str)
     return parseInt(str)
-    return  str * 1;
+    return str * 1;
     return str / 1
 }
 
@@ -951,7 +951,7 @@ function createID(fname, lname) {
 
 console.log(createID("mary", "lamb"));
 console.log(createID("John", "SMITH"));
-console.log(createID("mary", "smith")); 
+console.log(createID("mary", "smith"));
 
 
 // 49}
