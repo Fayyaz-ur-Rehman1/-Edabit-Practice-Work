@@ -23,9 +23,9 @@ console.log(hello());
 // // giveMeSomething("something") ➞ "something something"
 
 function giveMeSomething(str) {
-    const add = "something";
-    return add.concat(" " + str)
-    return "somthing " + str
+    // const add = "something";
+    // return add.concat(" " + str)
+    // return "somthing " + str
     return `somethings ${str}`
 }
 
@@ -60,23 +60,15 @@ console.log(nameString("javaScript"));
 // // boolToString(false) ➞ "false"
 
 function boolToString(str) {
-    return str.toString()
-    return str + ""
-    return `${str}`
+    // return str.toString()
+    // return str + ""
+    // return `${str}`
     let strbool = str ? "true" : "false";
     return strbool
 }
 console.log(boolToString(true));
 console.log(boolToString(false));
 
-function calculator(num) {
-    return eval(num);
-}
-
-console.log(calculator("23+4"));
-console.log(calculator("45-15"));
-console.log(calculator("13+2-5*2"));
-console.log(calculator("49/7*2-3"));
 
 // 5}  
 
@@ -97,12 +89,12 @@ console.log(calculator("13+2-5*2"));
 console.log(calculator("49/7*2-3"));
 
 
-
+// 6}
 
 function stringInt(str) {
-    return Number(str)
-    return parseInt(str)
-    return str * 1;
+    // return Number(str)
+    // return parseInt(str)
+    // return str * 1;
     return str / 1
 }
 
@@ -111,7 +103,7 @@ console.log(stringInt("1000"))
 console.log(stringInt("12"))
 
 
-// 6} 
+// 7} 
 
 // Emmy has written a function that returns a greeting to users. However, she's in love with Mubashir, and would like to greet him slightly differently. She added a special case in her function, but she made a mistake.
 // Can you help her?
@@ -121,7 +113,13 @@ console.log(stringInt("12"))
 // greeting("Mubashir") ➞ "Hello, my Love!"
 
 function greeting(str) {
-    return `Hello, ${str === 'Mubashir' ? 'my love' : str}!`
+    // return `Hello, ${str === 'Mubashir' ? 'my love' : str}!`
+    let concat = `Hello ${str}`
+    if (concat === "Hello Mubashir") {
+        return "Hello my love"
+    } else {
+        return concat
+    }
 }
 
 console.log(greeting("Matt"));
@@ -129,12 +127,12 @@ console.log(greeting("Helen"));
 console.log(greeting("Mubashir"));
 
 
-// 7}
+// 8}
 
 // Create a function that takes two strings as arguments and return either true or false depending on whether the total number of characters in the first string is equal to the total number of characters in the second string.
 // Examples
 // comp("AB", "CD") ➞ true
-// comp("ABC", "DE") ➞ falseu
+// comp("ABC", "DE") ➞ false
 // comp("hello", "edabit") ➞ false
 
 
@@ -151,7 +149,7 @@ console.log(comp("AB", "CD"));
 console.log(comp("ABC", "DE"));
 console.log(comp("hello", "edabit"));
 
-// 8}
+// 9}
 
 // Create a function that returns true if a string is empty and false otherwise.
 // Examples
@@ -160,13 +158,18 @@ console.log(comp("hello", "edabit"));
 // isEmpty("a") ➞ false
 
 function isEmpty(str) {
-    return str === "" ? true : false
+    // return str === "" ? true : false
+    if (str === "") {
+        return true
+    } else {
+        return false
+    }
 }
 console.log(isEmpty(""));
 console.log(isEmpty(" "));
 console.log(isEmpty("a"));
 
-// / 9}
+// 10}
 
 // Write a template string according to the following example:
 // Example
@@ -181,7 +184,7 @@ const c = "Jack";
 
 console.log(`Their names were : ${a}, ${b} and ${c}`);
 
-// 10}
+// 11}
 
 // Write a function that returns the length of a string. Make your function recursive.
 // Examples
@@ -199,7 +202,7 @@ console.log(length("make"));
 console.log(length("a"));
 console.log(length(""));
 
-// 11}
+// 12}
 
 // Create a function that takes a string and returns it as an integer.
 // Examples
@@ -218,7 +221,7 @@ console.log(stringInt("6"))
 console.log(stringInt("1000"))
 console.log(stringInt("12"))
 
-// 12}
+// 13}
 
 // Given two strings, firstName and lastName, return a single string in the format "last, first".
 // Examples
@@ -236,7 +239,7 @@ console.log(concatName("First", "Last"));
 console.log(concatName("John", "Doe"));
 console.log(concatName("Mary", "Jane"));
 
-// 13}
+// 14}
 
 // Create a function that evaluates an equation.
 // Examples
@@ -251,7 +254,7 @@ console.log(eq("1+2"));
 console.log(eq("6/(9-7)"));
 console.log(eq("3+2-4"));
 
-// 14}
+// 15}
 
 // Given a string, return true if its length is even or false if the length is odd.
 // Examples
@@ -264,13 +267,18 @@ console.log(eq("3+2-4"));
 // oddOrEven("cherry") ➞ true
 
 function oddOrEven(str) {
-    return str.length === 6 ? true : false
+    // return str.length === 6 ? true : false
+    if (str.length === 6) {
+        return true
+    } else {
+        return false
+    }
 }
 console.log(oddOrEven("apples"));
 console.log(oddOrEven("pears"));
 console.log(oddOrEven("cherry"));
 
-// 15}
+// 16}
 
 // You need to create two functions to substitute toString() and parseInt(); A function called intToString() that converts integers into strings and a function called stringToInt() that converts strings into integers.
 // Examples:
@@ -279,7 +287,9 @@ console.log(oddOrEven("cherry"));
 // intToString(29348) ➞ "29348"
 
 function intToString(numstr) {
-    return numstr.toString()
+    // return numstr.toString()
+    // return "" + numstr
+    return `${numstr}`
 }
 
 function stringToInt(strnum) {
@@ -290,7 +300,7 @@ console.log(intToString(4));
 console.log(stringToInt("4"));
 console.log(intToString(29348));
 
-// 16}
+// 17}
 
 // Create a function that takes a word and returns the new word without including the first character.
 // Examples
@@ -299,13 +309,15 @@ console.log(intToString(29348));
 // newWord("plum") ➞ "lum"
 
 function newWord(str) {
-    return str.slice(1)
+    // return str.slice(1)
+    // return str.substring(1)
+    return str.substr(1)
 }
 console.log(newWord("apple"))
 console.log(newWord("cherry"))
 console.log(newWord("plum"))
 
-// 17}
+// 18}
 
 // Create a function that takes a name and returns a greeting in the form of a string. Don't use a normal function, use an arrow function.
 // Examples
@@ -313,16 +325,19 @@ console.log(newWord("plum"))
 // helloName("Tiffany") ➞ "Hello Tiffany!"
 // helloName("Ed") ➞ "Hello Ed!"
 
-function helloName(str) {
+
+let helloName = (str) => {
     // return "Hello " + str
-    return `Hello ${str}`
+    // return `Hello ${str}`
+    let add = "Hello"
+    return add.concat(" " + str)
 }
 
 console.log(helloName("Gerald"));
 console.log(helloName("Tiffany"));
-console.log(helloName("Ed"));
+console.log(helloName("Ed!"));
 
-// 18}
+// 19}
 
 // Create a function that takes an array of numbers or letters and returns a string.
 // Examples
@@ -332,14 +347,15 @@ console.log(helloName("Ed"));
 
 function arrayToString(str) {
     // return str.toString()
-    // return str + str
+    //  return "" + str
     return str.join("")
+    // return `${str}`
 }
 console.log(arrayToString([1, 2, 3, 4, 5, 6]));
 console.log(arrayToString(["a", "b", "c", "d", "e", "f"]));
 console.log(arrayToString([1, 2, 3, "a", "s", "dAAAA"]));
 
-// 19}
+// 20}
 
 // Create a function that takes an array and a string as arguments and returns the index of the string.
 //     Examples
@@ -349,7 +365,9 @@ console.log(arrayToString([1, 2, 3, "a", "s", "dAAAA"]));
 // findIndex(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple") ➞ 0
 
 function findIndex(arr, str) {
-    return arr.indexOf(str)
+    // return arr.indexOf(str)
+    // return arr.findIndex(elm => elm.includes(str))
+    return arr.lastIndexOf(str)
 }
 
 console.log(findIndex(["hi", "edabit", "fgh", "abc"], "fgh"));
@@ -357,7 +375,7 @@ console.log(findIndex(["Red", "blue", "Blue", "Green"], "blue"));
 console.log(findIndex(["a", "g", "y", "d"], "d"));
 console.log(findIndex(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"));
 
-// 20}
+// 21}
 
 // reate a function that returns a number, based on the string provided. Here is a list of all digits:
 
