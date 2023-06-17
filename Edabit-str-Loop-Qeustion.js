@@ -1,4 +1,4 @@
-// // 16}
+// // 17}
 
 // // Create a function that takes a word and returns the new word without including the first character.
 // // Examples
@@ -17,7 +17,59 @@ console.log(newWord("apple"))
 console.log(newWord("cherry"))
 console.log(newWord("plum"))
 
-// // 23}
+
+// 22}
+
+// Create a function that returns true if a string contains any spaces.
+// Examples
+// hasSpaces("hello") ➞ false
+// hasSpaces("hello, world") ➞ true
+// hasSpaces(" ") ➞ true
+// hasSpaces("") ➞ false
+// hasSpaces(",./!@#") ➞ false
+
+function hasSpaces(str) {
+    for (let i = 0; i <= str.length; i++) {
+        let currentElement = str[i];
+        if (currentElement === " ") {
+            return true
+        }
+    }
+    return false
+}
+
+console.log(hasSpaces("hello"));
+console.log(hasSpaces("hello, world"));
+console.log(hasSpaces(" "));
+console.log(hasSpaces(""));
+console.log(hasSpaces(",./!@#"));
+
+
+// 23}
+
+// Create a function that takes a string (a random name). If the last character of the name is an "n", return true, otherwise return false.
+// Examples
+// isLastCharacterN("Aiden") ➞ true
+// isLastCharacterN("Piet") ➞ false
+// isLastCharacterN("Bert") ➞ false
+// isLastCharacterN("Dean") ➞ true
+
+function isLastCharacterN(str) {
+    for (let i = 0; i < str.length; i++) {
+        let currentElement = str[i];
+        if (currentElement[currentElement.length - 1] === "n") {
+            return true
+        }
+    }
+    return false
+}
+console.log(isLastCharacterN("Aiden"));
+console.log(isLastCharacterN("Piet"));
+console.log(isLastCharacterN("Bert"));
+console.log(isLastCharacterN("Dean"));
+
+
+// // 24}
 
 // // Create a function that takes as a parameter an array of "stringified" numbers and returns an array of numbers.
 // // Example:
@@ -40,7 +92,7 @@ console.log(toNumberArray(["91", "44"]));
 console.log(toNumberArray(["9.5", "8.8"]));
 
 
-// // 24}
+// // 25}
 
 // // Create a function that takes a string; we'll say that the front is the first three characters of the string. If the string length is less than three characters, the front is whatever is there. Return a new string, which is three copies of the front.
 // // Examples
@@ -50,10 +102,9 @@ console.log(toNumberArray(["9.5", "8.8"]));
 
 function frontThree(str) {
     let main = "";
-    let stratend = str.slice(0, 3)
+    // let stratend = str.slice(0, 3)
     for (let i = 0; i < 3; i++) {
-        main += stratend
-
+        main += str.substring(0, 3)
     }
     return main
 }
@@ -61,7 +112,7 @@ console.log(frontThree("Python"));
 console.log(frontThree("Cucumber"));
 console.log(frontThree("bioshock"));
 
-// // 25}
+// // 26}
 
 // // Create a function that takes a string txt and a number n and returns the repeated string n number of times.
 // // If given argument txt is not a string, return Not A String !!
@@ -78,9 +129,65 @@ function repeatString(str, num) {
     return str
 }
 
+function repeatString(str, num) {
+    let main = ""
+    for (let i = 1; i < num; i++) {
+        main = str += str
+        if (typeof main === 'number') return "Not A String !!";
+    }
+    return main
+}
+
 console.log(repeatString("Mubashir", 2));
 console.log(repeatString("Matt", 3));
 console.log(repeatString(1990, 7));
+
+
+// 31}
+
+// Write a function that stutters a word as if someone is struggling to read it. The first two letters are repeated twice with an ellipsis ... and space after each, and then the word is pronounced with a question mark ?.
+// Examples
+// stutter("incredible") ➞ "in... in... incredible?"
+// stutter("enthusiastic") ➞ "en... en... enthusiastic?"
+// stutter("outstanding") ➞ "ou... ou... outstanding?"
+
+
+function stutter(str) {
+    let main = ""
+    for (let i = 0; i < 2; i++) {
+        main += str[i]
+    }
+    return main + "..." + main + "..." + str + "?"
+}
+
+console.log(stutter("incredible"));
+console.log(stutter("enthusiastic"));
+console.log(stutter("outstanding"));
+
+// 34}
+
+// reate a function that takes in a current mood and return a sentence in the following format: "Today, I am feeling {mood}". However, if no argument is passed, return "Today, I am feeling neutral".
+// Examples
+// moodToday("happy") ➞ "Today, I am feeling happy"
+// moodToday("sad") ➞ "Today, I am feeling sad"
+// moodToday() ➞ "Today, I am feeling neutral"
+
+function moodToday(str) {
+    let main = "";
+    let add = "Today I am felling ";
+
+    if (str === undefined) {
+        return add + " natural"
+    }
+    for (let i = 0; i < str.length; i++) {
+        main += str[i]
+    }
+    return add + main
+}
+
+console.log(moodToday("happy"));
+console.log(moodToday("sad"));
+console.log(moodToday());
 
 
 // // 41}
