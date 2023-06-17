@@ -97,10 +97,10 @@ console.log(incrementItems1([-1, -2, -3, -4]));
 
 
 function getLastItem(arr) {
-return arr.pop()
-return arr.at(-1)
-return arr[-1]
-return arr.length - 1
+    return arr.pop()
+    return arr.at(-1)
+    return arr[-1]
+    return arr.length - 1
 }
 
 console.log(getLastItem([1, 2, 3]));
@@ -173,10 +173,10 @@ console.log(findIndex1(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"));
 
 
 function valueAt1(arr, word) {
-const currentIndex = Math.floor(word)
-return arr[currentIndex]
-return arr.at(word)
-return arr[Math.floor(word)]
+    const currentIndex = Math.floor(word)
+    return arr[currentIndex]
+    return arr.at(word)
+    return arr[Math.floor(word)]
 }
 
 console.log(valueAt1([1, 2, 3, 4, 5, 6], 10 / 2));
@@ -353,7 +353,7 @@ console.log(arrayValuesTypes([21.1, "float", "array", ["I am array"], null, true
 
 function hasSameBread(arr, arr1) {
     // return arr.at(0) === arr1.at(0) && arr.at(-1) === arr1.at(-1)
-    return arr[0] === arr1[0] && arr[arr.length - 1] === arr1[arr1.length - 1] 
+    return arr[0] === arr1[0] && arr[arr.length - 1] === arr1[arr1.length - 1]
 }
 
 console.log(hasSameBread(
