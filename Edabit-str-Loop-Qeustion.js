@@ -190,7 +190,7 @@ console.log(moodToday("sad"));
 console.log(moodToday());
 
 
-// // 41}
+// // 42}
 
 // // Create a function that returns the string "Burp" with the amount of "r's" determined by the input parameters of the function.
 // // Examples
@@ -210,7 +210,49 @@ console.log(longBurp(5));
 console.log(longBurp(9));
 
 
-// // 44}
+// 43}
+
+// Create a function that takes a string and returns a string with spaces in between all of the characters.
+// Examples
+// spaceMeOut("space") ➞ "s p a c e"
+// spaceMeOut("far out") ➞ "f a r   o u t"
+// spaceMeOut("elongated musk") ➞ "e l o n g a t e d   m u s k"
+
+function spaceMeOut(str) {
+    let main = ""
+    for (let i = 0; i < str.length; i++) {
+        main += str[i] + " "
+    }
+    return main
+}
+
+console.log(spaceMeOut("space"));
+console.log(spaceMeOut("far out"));
+console.log(spaceMeOut("elongated musk"));
+
+
+// 44}
+
+// Create a function that counts how many D's are in a sentence.
+// Examples
+// countDs("My friend Dylan got distracted in school.") ➞ 4
+// countDs("Debris was scattered all over the yard.") ➞ 3
+// countDs("The rodents hibernated in their den.") ➞ 3
+
+function countDs(str) {
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === 'D' || str[i] === 'd') {
+            count = count + 1
+        }
+    }
+    return count
+}
+console.log(countDs("My friend Dylan got distracted in school."));
+console.log(countDs("Debris was scattered all over the yard."));
+console.log(countDs("The rodents hibernated in their den."));
+
+// // 45}
 
 // // Create a function which makes the last character of a string repeat n number of times.
 // // Examples
@@ -220,10 +262,12 @@ console.log(longBurp(9));
 
 function modifyLast(str, num) {
     let main = "";
-    for (let i = 0; i < str.length - 1; i++) {
-        main += str[i]
+    let lastlen = str[str.length - 1]
+    main += str
+    for (let i = 0; i < num; i++) {
+        main += lastlen
     }
-    main += str[str.length - 1].repeat(num)
+
     return main
 }
 
@@ -232,7 +276,31 @@ console.log(modifyLast("hey", 6));
 console.log(modifyLast("excuse me what?", 5));
 
 
-// // 46}
+// 46}
+
+// Create a function that will put the first argument, a character, between every word in the second argument, a string.
+// Examples
+// add("R", "javascript is fun") ➞ "javascriptRisRfun"
+// add("#", "hello world!") ➞ "hello#world!"
+// add("#", " ") ➞ "#"
+
+function add(char, str) {
+    let newStr = ''
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === ' ') {
+            newStr += char;
+        } else {
+            newStr += str[i];
+        }
+    }
+    return newStr;
+}
+
+console.log(add("R", "javascript is fun"));
+console.log(add("#", "hello world!"));
+console.log(add("#", " "));
+
+// // 47}
 
 // // After an amazing performance, the crowd goes wild! People clap enthusiastically and most claps overlap with each other to create one homogeneous sound.
 // // An overlapped clap is a clap which starts but doesn't finish, as in "ClaClap" (The first clap is cut short and there are overall 2 claps)
@@ -247,20 +315,35 @@ function countClaps(str) {
     for (let i = 0; i < str.length; i++) {
         const currentElement = str[i]
         if (currentElement === "C") {
-            sum += 1
+            sum = sum + 1
         }
     }
     return sum
 
 }
 
-// console.log(countClaps("ClaClaClaClap!"));
-// console.log(countClaps("ClClClaClaClaClap!"));
-// console.log(countClaps("CCClaClClap!Clap!ClClClap!")); 
+console.log(countClaps("ClaClaClaClap!"));
+console.log(countClaps("ClClClaClaClaClap!"));
+console.log(countClaps("CCClaClClap!Clap!ClClClap!"));
 
+// 48}
 
+function findIndex(arr, index) {
+    for (let i = 0; i < arr.length; i++) {
+        const currentelement = arr[i]
+        if (currentelement === index) {
+            return i
+        }
+    }
+    return -1
+}
 
-// 49}
+console.log(findIndex(["hi", "edabit", "fgh", "abc"], "fgh"));
+console.log(findIndex(["Red", "blue", "Blue", "Green"], "blue"));
+console.log(findIndex(["a", "g", "y", "d"], "d"));
+console.log(findIndex(["Pineapple", "Orange", "Grape", "Apple"]));
+
+// 50}
 // Create a function which returns "upper" if all the letters in a word are uppercase, "lower" if lowercase and "mixed" for any mix of the two.
 // Examples
 // getCase("whisper...") ➞ "lower"
@@ -283,7 +366,7 @@ console.log(getCase("whisper..."));
 console.log(getCase("SHOUT!"));
 console.log(getCase("Indoor Voice"));
 
-// 50}
+// 51}
 
 // Create a function that determines if the temp of the water is considered boiling or not. temp will be measured in Fahrenheit and Celsius.
 // Examples
@@ -304,4 +387,26 @@ function isBoiling(str) {
 console.log(isBoiling("212F"));
 console.log(isBoiling("100C"));
 console.log(isBoiling("0F"));
+
+// 52}
+
+function toScottishScreaming(str) {
+    let vowel = ["A", "E", "I", "O", "U"];
+    let main = "";
+
+    for (let i = 0; i < str.length; i++) {
+        const currentElement = str[i];
+        const captialLatter = currentElement.toUpperCase();
+
+        if (vowel.includes(captialLatter)) {
+            main += "E";
+        } else {
+            main += captialLatter
+        }
+    }
+    return main
+}
+console.log(toScottishScreaming("hello world"));
+console.log(toScottishScreaming("Mr. Fox was very naughty"));
+console.log(toScottishScreaming("Butterflies are beautiful!"));
 
