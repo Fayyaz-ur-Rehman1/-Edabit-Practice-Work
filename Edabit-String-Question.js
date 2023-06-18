@@ -397,19 +397,19 @@ console.log(findIndex(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"));
 
 
 function word(word) {
-let obj = {
-    "one": 1,
-    "two": 2,
-    "three": 3,
-    "four": 4,
-    "five": 5,
-    "six": 6,
-    "seven": 7,
-    "eight": 8,
-    "nine": 9,
-    "zero": 0
-}
-return obj[word]
+    let obj = {
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "zero": 0
+    }
+    return obj[word]
 
     switch (word) {
         case "one":
@@ -1105,3 +1105,158 @@ console.log(toScottishScreaming("hello world"));
 console.log(toScottishScreaming("Mr. Fox was very naughty"));
 console.log(toScottishScreaming("Butterflies are beautiful!"));
 
+
+// 53}
+
+// Create a function that flips M's to W's (all uppercase).
+// Examples
+// wumbo("I LOVE MAKING CHALLENGES") ➞ "I LOVE WAKING CHALLENGES"
+// wumbo("MEET ME IN WARSAW") ➞ "WEET WE IN WARSAW"
+// wumbo("WUMBOLOGY") ➞ "WUWBOLOGY"
+
+function wumbo(str) {
+    let replacestr = /[M]/gi;
+    return str.toUpperCase().replace(replacestr, "W")
+
+    // return str.split(' ').map(elm => elm === 'M' || elm === 'm' ? 'W' : elm).join(' ')
+}
+console.log(wumbo("I LOVE MAKING CHALLENGES"));
+console.log(wumbo("MEET ME IN WARSAW"));
+console.log(wumbo("WUMBOLOGY"));
+
+// 54}
+
+// Create a function based on the input and output. Look at the examples, there is a pattern.
+// Examples
+// secret("div*2") ➞ "<div></div><div></div>"
+// secret("p*1") ➞ "<p></p>"
+// secret("li*3") ➞ "<li></li><li></li><li></li>"
+
+function secret(str) {
+    if (str === "div*2") {
+        return "<div></div><div></div>"
+    } else if (str === "p*1") {
+        return "<p></p>"
+    }
+    return "<li></li><li></li><li></li>"
+}
+console.log(secret("div*2"));
+console.log(secret("p*1"));
+console.log(secret("li*3"));
+
+// 55}
+
+// Create a function that takes an array of strings and numbers, and filters out the array so that it returns an array of integers only.
+
+// Examples
+// filterArray([1, 2, 3, "a", "b", 4]) ➞ [1, 2, 3, 4]
+// filterArray(["A", 0, "Edabit", 1729, "Python", "1729"]) ➞ [0, 1729]
+// filterArray(["Nothing", "here"]) ➞ []
+
+function filterArray(arr) {
+    // return arr.filter(num => typeof num === 'number')
+
+    return arr.reduce((a, b) => {
+        if (typeof b === 'number') {
+            a.push(b)
+        }
+        return a
+    }, [])
+}
+
+console.log(filterArray([1, 2, 3, "a", "b", 4]));
+console.log(filterArray(["A", 0, "Edabit", 1729, "Python", "1729"]));
+console.log(filterArray(["Nothing", "here"]));
+
+
+// 56
+
+// Create a function that returns an array of booleans from a given number by iterating through the number one digit at a time and appending true into the array if the digit is 1 and false otherwise.
+// Examples
+// integerBoolean("100101") ➞ [true, false, false, true, false, true]
+// integerBoolean("10") ➞ [true, false]
+// integerBoolean("001") ➞ [false, false, true]
+
+function integerBoolean(str) {
+    return str.split('').map(elm => elm === '1')
+}
+console.log(integerBoolean("100101"));
+console.log(integerBoolean("10"));
+console.log(integerBoolean("001"));
+
+// 57}
+
+// Given a letter and an array of words, return whether the letter does not appear in any of the words.
+// Examples
+// forbiddenLetter("r", ["rock", "paper", "scissors"]) ➞ false
+// forbiddenLetter("a", ["spoon", "fork", "knife"]) ➞ true
+// forbiddenLetter("m", []) ➞ true
+
+function forbiddenLetter(word, arr) {
+    // return arr.every(arr => !arr.includes(word))
+    return !arr.some(arr => arr.includes(word))
+}
+console.log(forbiddenLetter("r", ["rock", "paper", "scissors"]));
+console.log(forbiddenLetter("a", ["spoon", "fork", "knife"]));
+console.log(forbiddenLetter("m", []));
+
+// 58}
+
+// Help him by fixing the code in the code tab to pass this challenge. Look at the examples below to get an idea of what the function should do.
+// Examples
+// removeNumbers("mubashir1") ➞ "mubashir"
+// removeNumbers("12ma23tt") ➞ "matt"
+// removeNumbers("e1d2a3b4i5t6") ➞ "edabit"
+// Notes
+// READ EVERY WORD CAREFULLY, CHARACTER BY CHARACTER!
+// Don't overthink this challenge; it's not supposed to be hard.
+
+function removeNumbers(str) {
+    return str.split('').filter(c => !parseInt(c)).join('')
+}
+
+console.log(removeNumbers("mubashir1"));
+console.log(removeNumbers("12ma23tt"));
+console.log(removeNumbers("e1d2a3b4i5t6"));
+
+// 59
+
+// You are given an array of dates in the format Dec 11 and a monthin the format Dec as arguments. Each date represents a video that was uploaded on that day. Return the number of uploads for a given month.
+// Examples
+// uploadCount(["Sept 22", "Sept 21", "Oct 15"], "Sept") ➞ 2
+// uploadCount(["Sept 22", "Sept 21", "Oct 15"], "Oct") ➞ 1
+
+function uploadCount(arr, word) {
+    return arr.filter(elm => elm.includes(word)).length
+}
+
+console.log(uploadCount(["Sept 22", "Sept 21", "Oct 15"], "Sept"));
+console.log(uploadCount(["Sept 22", "Sept 21", "Oct 15"], "Oct"));
+
+// 60}
+
+// Given a one word lowercase string txt, return another string such that even-indexed and odd-indexed characters are grouped and groups are space-separated.
+
+// Examples
+// evenOddString("mubashir") ➞ "mbsi uahr"
+// // Letters at even indexes = "mbsi"
+// // Letters at odd indexes = "uahr"
+// // Join both strings with a space
+// evenOddString("edabit") ➞ "eai dbt"
+// evenOddString("airforce") ➞ "aroc ifre"
+
+
+function evenOddString(str) {
+    let even = "";
+    let odd = "";
+    for (let i = 0; i < str.length; i += 2) {
+        even += str[i]
+        if (i + 1 < str.length) {
+            odd += str[i + 1];
+        }
+    }
+    return even + " " + odd
+}
+
+console.log(evenOddString("edabit"));
+console.log(evenOddString("airforce")); 
