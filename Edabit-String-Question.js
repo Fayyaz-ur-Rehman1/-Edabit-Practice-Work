@@ -1260,3 +1260,255 @@ function evenOddString(str) {
 
 console.log(evenOddString("edabit"));
 console.log(evenOddString("airforce")); 
+
+// 61}
+
+// Create a function that takes two numbers and a mathematical operator and returns the result.
+// Examples
+// calculate(4, 9, "+") ➞ 13
+// calculate(12, 5, "-") ➞ 7
+// calculate(6, 3, "*") ➞ 18
+// calculate(25, 5, "/") ➞ 5
+// calculate(14, 3, "%") ➞ 2
+
+function calculate(num, num2, str) {
+
+    let main = 0;
+
+    switch (str) {
+        case "+":
+            main = num + num2
+            break
+        case "-":
+            main = num - num2
+            break
+        case "*":
+            main = num * num2
+            break
+        case "/":
+            main = num / num2
+            break
+        case "%":
+            main = num % num2
+            break
+        default:
+            return "not a number"
+    }
+    return main
+}
+
+console.log(calculate(4, 9, "+"));
+console.log(calculate(12, 5, "-"));
+console.log(calculate(6, 3, "*"));
+console.log(calculate(25, 5, "/"));
+console.log(calculate(14, 3, "%"));
+
+
+
+// 62}
+
+// In mathematics, an Arithmetic Progression (AP) is a sequence of numbers such that the difference between the consecutive terms is constant. Create a function that takes three arguments:
+// First element of the sequence first
+// Constant difference between the elements diff
+// Total numbers in the sequence n
+// Return the first n elements of the sequence with the given common difference diff. The final result should be a string of numbers, separated by comma and space.
+// Examples
+// arithmeticProgression(1, 2, 5) ➞ "1, 3, 5, 7, 9"
+// arithmeticProgression(1, 0, 5) ➞ "1, 1, 1, 1, 1"
+// arithmeticProgression(1, -3, 10) ➞ "1, -2, -5, -8, -11, -14, -17, -20, -23, -26"
+
+function arithmeticProgression(num1, num2, num3) {
+    if (num3 === 1) {
+        return num1.toString()
+    }
+    return arithmeticProgression(num1, num2, num3 - 1) + ", " + (num1 + (num3 - 1) * num2)
+}
+console.log(arithmeticProgression(1, 2, 5));
+console.log(arithmeticProgression(1, 0, 5));
+console.log(arithmeticProgression(1, -3, 10));
+
+
+// 63}
+
+// Character recognition software often makes mistakes when documents (especially old ones written with a typewriter) are digitized.
+// Your task is to correct the errors in the digitized text. You only have to handle the following mistakes:
+// A is misinterpreted as 4
+// S is misinterpreted as 5
+// O is misinterpreted as 0
+// I is misinterpreted as 1
+// The test cases contain numbers only by mistake.
+// Examples
+// keyboardMistakes("MUB45H1R") ➞ "MUBASHIR"
+// keyboardMistakes("DUBL1N") ➞ "DUBLIN"
+// keyboardMistakes("51NG4P0RE") ➞ "SINGAPORE"
+
+
+function keyboardMistakes(str) {
+  let main = ["4", "5", "1", "0"];
+  let arr = "";
+  if (main[0].includes(str)) {
+    arr += "A"
+  } else {
+     arr += str
+  }
+  return arr
+}
+console.log(keyboardMistakes("MUB45H1R"));
+console.log(keyboardMistakes("DUBL1N"));
+console.log(keyboardMistakes("51NG4P0RE")); 
+
+// 64}
+
+// Create a function that takes two lowercase strings str1 and str2 of letters from a to z and returns the sorted and longest string containing distinct letters.
+// Examples
+// str1 = "mubashir"
+// str2 = "edabit"
+// longestString(str1, str2) ➞ "abdehimrstu"
+// // Contains sorted and distinct letters of the given strings.
+// str1 = "abcdefghijklmnopqrstuvwxyz"
+// str2 = "abcdefghijklmnopqrstuvwxyz"
+// longestString(str1, str2) ➞ "abcdefghijklmnopqrstuvwxyz"
+// Contains sorted and distinct letters of the given strings.
+
+
+function longestString(str1, str2) {
+  let add = Array.from(new Set(str1 + str2)).sort();
+  return add.join("")
+}
+
+const str1 = "mubashir";
+const str2 = "edabit"
+console.log(longestString(str1, str2));
+
+let str3 = "abcdefghijklmnopqrstuvwxyz"
+let str4 = "abcdefghijklmnopqrstuvwxyz"
+console.log(longestString(str3, str4));
+
+
+// 65}
+
+// Create a function that returns the last value of the last item in an array or string.
+// Examples
+// lastItem([0, 4, 19, 34, 50, -9, 2]) ➞ 2
+// lastItem("The quick brown fox jumped over the lazy dog") ➞ "g"
+// lastItem([]) ➞ undefined
+
+function lastItem(arrstr) {
+  return arrstr[arrstr.length - 1];
+}
+console.log(lastItem([0, 4, 19, 34, 50, -9, 2]));
+console.log(lastItem("The quick brown fox jumped over the lazy dog"));
+console.log(lastItem([]))
+
+
+// 66}
+
+// Create a function that takes an array. This array will contain numbers represented as strings.
+// Your function should split this array into two new arrays. The first array should contain only even numbers. The second only odd. Then, wrap these two arrays in one main array and return it.
+// Return an empty array if there are no even numbers, or odd.
+// Example
+// cleanUpArray(["8"]) ➞ [[8], []]
+// cleanUpArray(["11"]) ➞ [[], [11]]
+// cleanUpArray(["7", "4", "8"]) ➞ [[4, 8], [7]]
+// cleanUpArray(["9", "4", "5", "8"]) ➞ [[4, 8], [9, 5]]
+
+
+function cleanUpArray(arr) {
+  let even = arr.filter(num => parseInt(num) % 2 == 0);
+  let odd = arr.filter(num => parseInt(num) % 2 !== 0);
+  return [even.map(num => parseInt(num)), odd.map(num => parseInt(num))]
+}
+console.log(cleanUpArray(["8"]));
+console.log(cleanUpArray(["11"]));
+console.log(cleanUpArray(["7", "4", "8"]));
+console.log(cleanUpArray(["9", "4", "5", "8"]));
+
+// 67}
+
+// Create a function that takes a string str and returns an array of two-paired characters. If the string has an odd number of characters, add an asterisk * in the final pair.
+// See the below examples for a better understanding:
+// Examples
+// stringPairs("mubashir") ➞ ["mu", "ba", "sh", "ir"]
+// stringPairs("edabit") ➞ ["ed", "ab", "it"]
+// stringPairs("airforces") ➞ ["ai", "rf", "or", "ce", "s*"]
+
+function stringPairs(str) {
+  return str.split('').reduce((pairs, char, index) => {
+    if (index % 2 === 0) {
+      pairs.push(char + (str[index + 1] || '*'));
+    }
+    return pairs;
+  }, []);
+}
+
+console.log(stringPairs("mubashir"));    // ["mu", "ba", "sh", "ir"]
+console.log(stringPairs("edabit"));      // ["ed", "ab", "it"]
+console.log(stringPairs("airforces"));   // ["ai", "rf", "or", "ce", "s_"]
+
+
+// 68}
+
+// Create a function to calculate how many characters in total are needed to make up the shape. You will be given an array of strings which make up a shape in the compiler (i.e. a square, a rectangle or a line).
+// Examples
+// countCharacters([
+//   "###",
+//   "###",
+//   "###"
+// ]) ➞ 9
+// countCharacters([
+//   "22222222",
+//   "22222222",
+// ]) ➞ 16
+// countCharacters([
+//   "------------------"
+// ]) ➞ 18
+// countCharacters([]) ➞ 0
+// countCharacters(["", ""]) ➞ 0
+
+function countCharacters(arr) {
+  return arr.join("").length
+}
+
+console.log(countCharacters(["###", "###", "###"]));
+console.log(countCharacters(["22222222", "22222222",]));
+console.log(countCharacters(["------------------"]));
+console.log(countCharacters([]));
+console.log(countCharacters(["", ""]));
+
+
+// 69}
+
+// Wild Roger is participating in a Western Showdown, meaning he has to draw (pull out and shoot) his gun faster than his opponent in a gun standoff.
+// Given two strings,p1 and p2, return which person drew their gun the fastest. If both are drawn at the same time, return "tie".
+// Examples
+// showdown(
+//   "   Bang!        ",
+//   "        Bang!   "
+// ) ➞ "p1"
+// // p1 draws his gun sooner than p2
+// showdown(
+//   "               Bang! ",
+//   "             Bang!   "
+// ) ➞ "p2"
+// showdown(
+//   "     Bang!   ",
+//   "     Bang!   "
+// ) ➞ "tie"
+
+function showdown(str) {
+  return str.trim()
+}
+
+console.log(showdown(
+  "   Bang!        ",
+  "        Bang!   "
+)); 
+
+console.log( showdown(
+  "               Bang! ",
+  "             Bang!   "
+));
+console.log(showdown(
+  "     Bang!   ",
+  "     Bang!   "
+)); 
