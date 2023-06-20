@@ -454,7 +454,7 @@ function secret(str) {
 }
 console.log(secret("div*2"));
 console.log(secret("p*1"));
-console.log(secret("li*3")); 
+console.log(secret("li*3"));
 
 
 
@@ -480,7 +480,7 @@ function filterArray(arr) {
 
 console.log(filterArray([1, 2, 3, "a", "b", 4]));
 console.log(filterArray(["A", 0, "Edabit", 1729, "Python", "1729"]));
-console.log(filterArray(["Nothing", "here"])); 
+console.log(filterArray(["Nothing", "here"]));
 
 
 
@@ -508,7 +508,7 @@ function integerBoolean(str) {
 }
 console.log(integerBoolean("100101"));
 console.log(integerBoolean("10"));
-console.log(integerBoolean("001")); 
+console.log(integerBoolean("001"));
 
 
 // 57}
@@ -531,7 +531,7 @@ function forbiddenLetter(word, arr) {
 
 console.log(forbiddenLetter("r", ["rock", "paper", "scissors"]));
 console.log(forbiddenLetter("a", ["spoon", "fork", "knife"]));
-console.log(forbiddenLetter("m", [])); 
+console.log(forbiddenLetter("m", []));
 
 
 
@@ -560,7 +560,7 @@ function removeNumbers(str) {
 
 console.log(removeNumbers("mubashir1"));
 console.log(removeNumbers("12ma23tt"));
-console.log(removeNumbers("e1d2a3b4i5t6")); 
+console.log(removeNumbers("e1d2a3b4i5t6"));
 
 // 59
 
@@ -580,7 +580,7 @@ function uploadCount(arr, word) {
 }
 
 console.log(uploadCount(["Sept 22", "Sept 21", "Oct 15"], "Sept"));
-console.log(uploadCount(["Sept 22", "Sept 21", "Oct 15"], "Oct")); 
+console.log(uploadCount(["Sept 22", "Sept 21", "Oct 15"], "Oct"));
 
 
 // 60}
@@ -609,7 +609,7 @@ function evenOddString(str) {
 }
 
 console.log(evenOddString("edabit"));
-console.log(evenOddString("airforce")); 
+console.log(evenOddString("airforce"));
 
 // 61}
 
@@ -683,7 +683,7 @@ function arithmeticProgression(num1, num2, num3) {
 
 console.log(arithmeticProgression(1, 2, 5));
 console.log(arithmeticProgression(1, 0, 5));
-console.log(arithmeticProgression(1, -3, 10)); 
+console.log(arithmeticProgression(1, -3, 10));
 
 
 // 63}
@@ -756,7 +756,7 @@ function cleanUpArray(arr) {
 console.log(cleanUpArray(["8"]));
 console.log(cleanUpArray(["11"]));
 console.log(cleanUpArray(["7", "4", "8"]));
-console.log(cleanUpArray(["9", "4", "5", "8"])); 
+console.log(cleanUpArray(["9", "4", "5", "8"]));
 
 // 67}
 
@@ -798,7 +798,7 @@ function profitMargin(costPrice, salesPrice) {
 }
 console.log(profitMargin(50, 50));
 console.log(profitMargin(28, 39));
-console.log(profitMargin(33, 84)); 
+console.log(profitMargin(33, 84));
 
 // 71}
 
