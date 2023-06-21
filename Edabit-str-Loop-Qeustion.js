@@ -781,3 +781,43 @@ function stringPairs(str) {
 console.log(stringPairs("mubashir"));
 console.log(stringPairs("edabit"));
 console.log(stringPairs("airforces"));
+
+
+
+// 70}
+
+// Create a function that calculates the profit margin given costPrice and salesPrice. Return the result as a percentage formatted string, and rounded to one decimal. To calculate profit margin you subtract the cost from the sales price, then divide by sales price.
+// Examples
+// profitMargin(50, 50) ➞ "0.0%"
+// profitMargin(28, 39) ➞ "28.2%"
+// profitMargin(33, 84) ➞ "60.7%"
+
+function profitMargin(costPrice, salesPrice) {
+    let main = ((salesPrice - costPrice) / salesPrice) * 100
+    return main.toFixed(1) + "%"
+}
+console.log(profitMargin(50, 50));
+console.log(profitMargin(28, 39));
+console.log(profitMargin(33, 84)); 
+
+// 71}
+
+// Edabit allows for markdown formatting, meaning that it's possible to format words by surrounding text with special characters. For example, to get bold text, you surround the text with double asterisks, like this **bold**.
+// Here is a list of the possible formatting options in Edabit and how to apply them:
+// **bold**
+// _italics_
+// `inline code`
+// ~~strikethrough~~
+// Challenge
+// Given a string and a style character, return the newly formatted string. Style characters are single letters that represent the different types of formatting.
+// For the purposes of this challenge, the style characters are as follows:
+// "b" is for bold
+// "i" is for italics
+// "c" is for inline code
+// "s" is for strikethrough
+// Examples
+// mdFormat("Bold", "b") ➞ "**Bold**"
+// mdFormat("leaning text", "i") ➞ "_leaning text_"
+// mdFormat("Edabit", "c") ➞ "`Edabit`"
+// mdFormat("That's a strike!", "s") ➞ "~~That's a strike!~~"
+
