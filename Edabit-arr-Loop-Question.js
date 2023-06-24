@@ -89,9 +89,6 @@ console.log(incrementItems([2, 4, 6, 8]));
 console.log(incrementItems([-1, -2, -3, -4]));
 
 
-
-
-
 // 5} 
 
 // Create a function that accepts an array and returns the last item in the array.
@@ -355,7 +352,8 @@ console.log(arrBetween(7, 32, [1, 2, 3, 78]));
 function toNumberArray(arr) {
     let main = []
     for (let i = 0; i < arr.length; i++) {
-        main.push(arr[i] * 1)
+        // main.push(arr[i] * 1)
+        main.push(Number(arr[i]))
     }
     return main
 }
@@ -387,50 +385,7 @@ console.log(arrayValuesTypes([1, 2, "null", []]));
 console.log(arrayValuesTypes(["214", true, false, 2, 2.15, [], null]));
 console.log(arrayValuesTypes([21.1, "float", "array", ["I am array"], null, true, 214]));
 
-// 18}
 
-// Given two arrays, which represent two sandwiches, return whether both sandwiches use the same type of bread. The bread will always be found at the start and end of the array.
-
-// Examples
-// hasSameBread(
-//   ["white bread", "lettuce", "white bread"],
-//   ["white bread", "tomato", "white bread"]
-// ) ➞ true
-
-// hasSameBread(
-//   ["brown bread", "chicken", "brown bread"],
-//   ["white bread", "chicken", "white bread"]
-// ) ➞ false
-
-// hasSameBread(
-//   ["toast", "cheese", "toast"],
-//   ["brown bread", "cheese", "toast"]
-// ) ➞ false
-
-
-function hasSameBread(arr, arr1) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === arr || arr[i] === "white bread") {
-            return true
-        }
-    }
-    return false
-}
-
-console.log(hasSameBread(
-    ["white bread", "lettuce", "white bread"],
-    ["white bread", "tomato", "white bread"]
-));
-
-console.log(hasSameBread(
-    ["brown bread", "chicken", "brown bread"],
-    ["white bread", "chicken", "white bread"]
-));
-
-console.log(hasSameBread(
-    ["toast", "cheese", "toast"],
-    ["brown bread", "cheese", "toast"]
-));
 
 // 19
 
@@ -453,7 +408,7 @@ console.log(checkSquareAndCube([4, 8]));
 console.log(checkSquareAndCube([16, 48]));
 console.log(checkSquareAndCube([9, 27]));
 
-// 
+// 20}
 
 // Levers are simple machines with a rigid beam and a fulcrum. From the picture below, you can see that there are 3-types of levers: first class, second class and third class.
 // In a first class lever, the fulcrum is situated in the middle with the effort and the load being positioned opposite of each other.
@@ -468,10 +423,10 @@ console.log(checkSquareAndCube([9, 27]));
 
 function determineLever(str) {
     let main = "";
-    for (let i = 0; i < str.length; i++) {
-        if (str[1] === "f") return "first class lever"
-        if (str[1] === "l") return "second class lever"
-        if (str[1] === "e") return "third class lever"
+    for (let i = 1; i < str.length; i++) {
+        if (str[i] === "f") return "first class lever"
+        if (str[i] === "l") return "second class lever"
+        if (str[i] === "e") return "third class lever"
 
     }
     return main
@@ -493,7 +448,7 @@ console.log(determineLever(["f", "e", "l"]));
 function length(str) {
     let main = 0;
     for (let i = 0; i < str.length; i++) {
-        main++
+        main = main + 1
     }
     return main
 }
@@ -510,19 +465,17 @@ console.log(length("wash your hands!"));
 // halfQuarterEighth(22) ➞ [11, 5.5, 2.75]
 // halfQuarterEighth(25) ➞ [12.5, 6.25, 3.125]
 
-function halfQuarterEighth(arr) {
-    let main = []
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[0] / 2) {
-            main.push(arr[i])
-        }
-    }
-    return main
-}
 
-console.log(halfQuarterEighth(6));
-console.log(halfQuarterEighth(22));
-console.log(halfQuarterEighth(25));
+function halfQuarterEighth(arr) {
+    let index1 = arr / 2
+    let index2 = index1 / 2 
+    let index3 = index2 / 2
+    return Array.of(index1,index2,index3)
+  }
+  
+  console.log(halfQuarterEighth(6));
+  console.log(halfQuarterEighth(22));
+  console.log(halfQuarterEighth(25))
 
 // 24}
 
