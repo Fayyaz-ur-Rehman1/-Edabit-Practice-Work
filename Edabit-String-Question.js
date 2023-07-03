@@ -42,10 +42,10 @@ console.log(giveMeSomething("something"));
 // // nameString("javaScript") ➞ "javaScriptEdabit"
 
 function nameString(str) {
-    // let concatstr = " Edabit"
-    // return str.concat(concatstr)
-    // return str + " Edabit"
-    return `${str} Edabit`
+let concatstr = " Edabit"
+return str.concat(concatstr)
+return str + " Edabit"
+return `${str} Edabit`
 }
 
 console.log(nameString("Mubashir"));
@@ -137,11 +137,11 @@ console.log(greeting("Mubashir"));
 
 
 function comp(str, str1) {
-    // return str.length === str1.length
-    if (str.length === str1.length) {
-        return true
-    }
-    return false
+    return str.length === str1.length
+    // if (str.length === str1.length) {
+    //     return true
+    // }
+    // return false
 }
 
 
@@ -230,9 +230,9 @@ console.log(stringInt("12"))
 // concatName("Mary", "Jane") ➞ "Jane, Mary"
 
 function concatName(str, str1) {
-    // return str + ' ' + str1
-    // return `${str} ${str1} `
-    return str.concat(" " + str1)
+    return str + ' ' + str1
+    // return `${str} ${str1}`
+    // return str.concat(" " + str1)
 }
 
 console.log(concatName("First", "Last"));
@@ -267,12 +267,12 @@ console.log(eq("3+2-4"));
 // oddOrEven("cherry") ➞ true
 
 function oddOrEven(str) {
-    // return str.length === 6 ? true : false
-    if (str.length === 6) {
-        return true
-    } else {
-        return false
-    }
+    return str.length%2===0 ? true : false
+//     if (str.length%2===0) {
+//         return true
+//     } else {
+//         return false
+//     }
 }
 console.log(oddOrEven("apples"));
 console.log(oddOrEven("pears"));
@@ -287,9 +287,9 @@ console.log(oddOrEven("cherry"));
 // intToString(29348) ➞ "29348"
 
 function intToString(numstr) {
-    // return numstr.toString()
+    return numstr.toString()
     // return "" + numstr
-    return `${numstr}`
+    // return `${numstr}`
 }
 
 function stringToInt(strnum) {
@@ -312,6 +312,7 @@ function newWord(str) {
     // return str.slice(1)
     // return str.substring(1)
     return str.substr(1)
+
 }
 console.log(newWord("apple"))
 console.log(newWord("cherry"))
@@ -347,9 +348,9 @@ console.log(helloName("Ed!"));
 
 function arrayToString(str) {
     // return str.toString()
-    //  return "" + str
-    return str.join("")
-    // return `${str}`
+    //  return "" + str.join("")
+    // return str.join("")
+    return `${str.join("")}`
 }
 console.log(arrayToString([1, 2, 3, 4, 5, 6]));
 console.log(arrayToString(["a", "b", "c", "d", "e", "f"]));
@@ -397,19 +398,19 @@ console.log(findIndex(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"));
 
 
 function word(word) {
-    let obj = {
-        "one": 1,
-        "two": 2,
-        "three": 3,
-        "four": 4,
-        "five": 5,
-        "six": 6,
-        "seven": 7,
-        "eight": 8,
-        "nine": 9,
-        "zero": 0
-    }
-    return obj[word]
+    // let obj = {
+    //     "one": 1,
+    //     "two": 2,
+    //     "three": 3,
+    //     "four": 4,
+    //     "five": 5,
+    //     "six": 6,
+    //     "seven": 7,
+    //     "eight": 8,
+    //     "nine": 9,
+    //     "zero": 0
+    // }
+    // return obj[word]
 
     switch (word) {
         case "one":
@@ -448,11 +449,13 @@ console.log(word("nine"));
 // hasSpaces("") ➞ false
 // hasSpaces(",./!@#") ➞ false
 
+
+
 function hasSpaces(str) {
+    // return str.indexOf(" ") !== -1 ? true : false
     // return str.indexOf(" ") !== -1 
-    // return str.includes(" ")
+    return str.includes(" ")
     // return str.lastIndexOf(" ") !== -1
-    return str.indexOf(" ") !== -1 ? true : false
 }
 
 console.log(hasSpaces("hello"));
@@ -474,7 +477,8 @@ function isLastCharacterN(str) {
     // return str.includes("n")
     // return str[str.length-1] === 'n';
     // return str.endsWith('n')
-    return str.charAt(str.length - 1) === 'n';
+    // return str.charAt(str.length - 1) === 'n';
+    return str.at(str.length - 1) === 'n'
 }
 console.log(isLastCharacterN("Aiden"));
 console.log(isLastCharacterN("Piet"));
@@ -491,11 +495,9 @@ console.log(isLastCharacterN("Dean"));
 // toNumberArray(["91", "44"]) ➞ [91, 44]
 // toNumberArray(["9.5", "8.8"]) ➞ [9.5, 8.8]
 
-function toNumberArray(arrstrnum) {
-    // return arrstrnum.map(elm => elm * 1)
-    // return arrstrnum.map(Number)
-    return arrstrnum.map(num => parseInt(num))
-
+function toNumberArray(arrstrtonum) {
+    // return arrstrtonum.map(elm => elm * 1)
+    return arrstrtonum.map(Number)
 }
 
 console.log(toNumberArray(["9.4", "4.2"]));
@@ -531,11 +533,11 @@ console.log(frontThree("bioshock"));
 // repeatString(1990, 7) ➞ "Not A String !!"
 
 function repeatString(str, num) {
-    // return str === 1990 ? "Not A String !!" : str.repeat(num)
-    if (typeof str === 'number') {
-        return "Not A String"
-    }
-    return str.repeat(num)
+    return str === 1990 ? "Not A String !!" : str.repeat(num)
+    // if (typeof str === 'number') {
+    //     return "Not A String"
+    // }
+    // return str.repeat(num)
 }
 
 console.log(repeatString("Mubashir", 2));
@@ -556,24 +558,24 @@ console.log(repeatString(1990, 7));
 // relationToLuke("Han") ➞ "Luke, I am your brother in law."
 
 function relationToLuke(str) {
-    // switch (str) {
+    switch (str) {
 
-    //     case "Darth Vader":
-    //         return "Luke, I am your father"
+        case "Darth Vader":
+            return "Luke, I am your father"
 
-    //     case "Leia":
-    //         return "Luke, I am your sister"
+        case "Leia":
+            return "Luke, I am your sister"
 
-    //     case "Han":
-    //         return "Luke, I am your brother in law"
-    // }
-
-    let obj = {
-        "Darth Vader": "Luke, I am your father",
-        "Leia": "Luke, I am your sister",
-        "Han": "Luke, I am your brother in law"
+        case "Han":
+            return "Luke, I am your brother in law"
     }
-    return obj[str]
+
+    // let obj = {
+    //     "Darth Vader": "Luke, I am your father",
+    //     "Leia": "Luke, I am your sister",
+    //     "Han": "Luke, I am your brother in law"
+    // }
+    // return obj[str]
 }
 
 console.log(relationToLuke("Darth Vader"));
@@ -629,7 +631,8 @@ console.log(cityFacts({
 function isPlural(str) {
     // return str.includes("s")
     // return str[str.length-1] === "s"
-    return str[str.length - 1] === "s" ? true : false;
+    // return str[str.length - 1] === "s" ? true : false;
+    return str.endsWith("s")
 }
 
 console.log(isPlural("changes"));
@@ -672,8 +675,8 @@ console.log(firstLast("durga"));
 
 
 function stutter(str) {
-    let repeated = str.substring(0, 2) + "..."
-    // let repeated = str.slice(0, 2) + "...";
+    // let repeated = str.substring(0, 2) + "..."
+    let repeated = str.slice(0, 2) + "...";
     return repeated + repeated + str + "?"
 }
 
@@ -690,10 +693,10 @@ console.log(stutter("outstanding"));
 // reversePsychology("go to school") ➞ "Do not go to school."
 
 function reversePsychology(str) {
-    // return "Do not " + str
+    return "Do not " + str
     // return `Do not ${str}`
-    let add = "Do not";
-    return add.concat(" " + str)
+    // let add = "Do not";
+    // return add.concat(" " + str)
 }
 
 console.log(reversePsychology("wash the dishes"));
@@ -725,12 +728,12 @@ console.log(greaterThanOne("10/10"));
 // moodToday() ➞ "Today, I am feeling neutral"
 
 function moodToday(str) {
-    return `Today I am feeling  ${str === undefined ? "neutral" : str}`;
+    // return `Today I am feeling  ${str === undefined ? "neutral" : str}`;
 
-    // if (str === undefined) {
-    //     return   "Today I am felling nature"
-    // }
-    // return "Today I am felling " + str 
+    if (str === undefined) {
+        return   "Today I am felling nature"
+    }
+    return "Today I am felling " + str 
 }
 
 console.log(moodToday("happy"));
@@ -811,14 +814,14 @@ console.log(match("mask", "mAskinG"));
 
 
 function amazingEdabit(str) {
-    let ar = str.split(" ")
-    return ar[0] === "edabit" ? `${ar[0]} is amazing` : `${ar[0]} is not amazing`
+    let arr = str.split(" ")
+    // return arr[0] === "edabit" ? `${arr[0]} is amazing` : `${arr[0]} is not amazing`
 
-    // if (ar[0] === "edabit") {
-    //     return "edabit is amazing"
-    // } else {
-    //     return ar[0] + " " + "is not amazing"
-    // }
+    if (arr[0] === "edabit") {
+        return "edabit is amazing"
+    } else {
+        return arr[0] + " " + "is not amazing"
+    }
 }
 
 console.log(amazingEdabit("edabit is amazing."));
@@ -834,7 +837,13 @@ console.log(amazingEdabit("Infinity is amazing."));
 // intOrString(9843532) ➞ "int"
 
 function intOrString(str) {
-    return typeof str === "number" ? "int" : "str"
+    // return typeof str === "number" ? "int" : "str"
+    if(typeof str === "number"){
+        return "int"
+    }else {
+        return "str"
+    }
+
 }
 
 console.log(intOrString(8));
@@ -1631,7 +1640,7 @@ function primenum(num) {
     return "this is prime number"
 }
 
-let pro = prompt("enter the numbe")
+let pro = prompt("enter the number")
 
 console.log(primenum(pro));
 
