@@ -1631,7 +1631,7 @@ function primenum(num) {
     return "this is prime number"
 }
 
-let pro = prompt("enter the number")
+let pro = prompt("enter the numbe")
 
 console.log(primenum(pro));
 

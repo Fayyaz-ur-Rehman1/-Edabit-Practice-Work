@@ -82,7 +82,8 @@ console.log(isLastCharacterN("Dean"));
 function toNumberArray(arrstrnum) {
     let main = [];
     for (let i = 0; i < arrstrnum.length; i++) {
-        main.push(arrstrnum[i] * 1)
+        // main.push(arrstrnum[i] * 1)
+         main.push(Number(arrstrnum[i]))
     }
     return main
 }
@@ -101,12 +102,19 @@ console.log(toNumberArray(["9.5", "8.8"]));
 // // frontThree("bioshock") ➞ "biobiobio"
 
 function frontThree(str) {
-    let main = "";
-    // let stratend = str.slice(0, 3)
-    for (let i = 0; i < 3; i++) {
-        main += str.substring(0, 3)
+    let result = "";
+    if (str.length >= 3) {
+        let frontThree = ""
+        for (let i = 0; i < 3; i++) {
+            frontThree += str[i]
+        }
+        for (let j = 0; j < 3; j++) {
+            result += frontThree
+        }
+    } else {
+        result = str
     }
-    return main
+    return result
 }
 console.log(frontThree("Python"));
 console.log(frontThree("Cucumber"));
@@ -122,20 +130,14 @@ console.log(frontThree("bioshock"));
 // // repeatString(1990, 7) ➞ "Not A String !!"
 
 function repeatString(str, num) {
-    if (typeof str === 'number') return "Not A String !!";
-    for (let i = 1; i < num; i++) {
-        str += str
+    let result = "";
+    if (typeof str !== "string") {
+        return "Not A String !!";
     }
-    return str
-}
-
-function repeatString(str, num) {
-    let main = ""
-    for (let i = 1; i < num; i++) {
-        main = str += str
-        if (typeof main === 'number') return "Not A String !!";
+    for (let i = 0; i < num; i++) {
+        result += str
     }
-    return main
+    return result
 }
 
 console.log(repeatString("Mubashir", 2));
