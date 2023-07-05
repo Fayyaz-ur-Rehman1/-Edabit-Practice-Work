@@ -194,11 +194,11 @@ console.log(moodToday());
 
 // // 42}
 
-// // Create a function that returns the string "Burp" with the amount of "r's" determined by the input parameters of the function.
-// // Examples
-// // longBurp(3) ➞ "Burrrp"
-// // longBurp(5) ➞ "Burrrrrp"
-// // longBurp(9) ➞ "Burrrrrrrrrp"
+// Create a function that returns the string "Burp" with the amount of "r's" determined by the input parameters of the function.
+// Examples
+// longBurp(3) ➞ "Burrrp"
+// longBurp(5) ➞ "Burrrrrp"
+// longBurp(9) ➞ "Burrrrrrrrrp"
 
 function longBurp(count) {
     let str = 'Bu';
@@ -232,7 +232,6 @@ console.log(spaceMeOut("space"));
 console.log(spaceMeOut("far out"));
 console.log(spaceMeOut("elongated musk"));
 
-
 // 44}
 
 // Create a function that counts how many D's are in a sentence.
@@ -263,19 +262,18 @@ console.log(countDs("The rodents hibernated in their den."));
 // // modifyLast("excuse me what?", 5) ➞ "excuse me what?????"
 
 function modifyLast(str, num) {
-    let main = "";
-    let lastlen = str[str.length - 1]
+    let main = ""
     main += str
     for (let i = 0; i < num; i++) {
-        main += lastlen
+        main += str[str.length - 1]
     }
-
     return main
 }
 
 console.log(modifyLast("Hello", 3));
 console.log(modifyLast("hey", 6));
 console.log(modifyLast("excuse me what?", 5));
+
 
 
 // 46}
@@ -378,7 +376,6 @@ console.log(getCase("Indoor Voice"));
 
 function isBoiling(str) {
     for (let i = 0; i < str.length; i++) {
-        str[i]
         if (str[i] === "0") {
             return false
         } else {
@@ -447,7 +444,7 @@ console.log(wumbo("WUMBOLOGY"));
 // secret("li*3") ➞ "<li></li><li></li><li></li>"
 
 function secret(str) {
-    let [tagName, count] = str.split("*");
+    let [tagName, count] = str.split("*");    
     let result = "";
     for (let i = 0; i < count; i++) {
         result += `<${tagName}></${tagName}>`;
@@ -501,9 +498,6 @@ function integerBoolean(str) {
             main.push(true)
         } else if (str[i] === '0') {
             main.push(false)
-        }
-        else {
-            main.push(str[i])
         }
     }
     return main
@@ -801,25 +795,3 @@ function profitMargin(costPrice, salesPrice) {
 console.log(profitMargin(50, 50));
 console.log(profitMargin(28, 39));
 console.log(profitMargin(33, 84));
-
-// 71}
-
-// Edabit allows for markdown formatting, meaning that it's possible to format words by surrounding text with special characters. For example, to get bold text, you surround the text with double asterisks, like this **bold**.
-// Here is a list of the possible formatting options in Edabit and how to apply them:
-// **bold**
-// _italics_
-// `inline code`
-// ~~strikethrough~~
-// Challenge
-// Given a string and a style character, return the newly formatted string. Style characters are single letters that represent the different types of formatting.
-// For the purposes of this challenge, the style characters are as follows:
-// "b" is for bold
-// "i" is for italics
-// "c" is for inline code
-// "s" is for strikethrough
-// Examples
-// mdFormat("Bold", "b") ➞ "**Bold**"
-// mdFormat("leaning text", "i") ➞ "_leaning text_"
-// mdFormat("Edabit", "c") ➞ "`Edabit`"
-// mdFormat("That's a strike!", "s") ➞ "~~That's a strike!~~"
-
