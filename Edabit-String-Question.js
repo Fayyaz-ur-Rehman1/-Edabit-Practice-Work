@@ -907,8 +907,8 @@ console.log(toStr(532));
 
 
 function longBurp(num) {
-    return "Bu" + "r".repeat(num) + "p";
-    // return  `Bu${Array(num).fill("r").join("")}p`
+    // return "Bu" + "r".repeat(num) + "p";
+    return  `Bu${Array(num).fill("r").join("")}p`
 }
 
 console.log(longBurp(3));
@@ -924,10 +924,10 @@ console.log(longBurp(9));
 // spaceMeOut("elongated musk") ➞ "e l o n g a t e d   m u s k"
 
 function spaceMeOut(str) {
-    // return str.split("").join(" ")
-    return str.split('').map(function (elm) {
-        return elm + ""
-    }).join(" ").trim()
+    return str.split("").join(" ")
+    // return str.split('').map(function (elm) {
+        // return elm + ""
+    // }).join(" ").trim()
 }
 
 console.log(spaceMeOut("space"));
@@ -964,7 +964,10 @@ function modifyLast(str, num) {
     // let strmodify = str.slice(0, -1) + modifyword
     // return strmodify
 
-    let main = str.charAt(str.length - 1);
+    // let main = str.charAt(str.length - 1);
+    // return str + main.repeat(num)
+
+    let main = str.at(-1)
     return str + main.repeat(num)
 }
 
@@ -1001,17 +1004,11 @@ console.log(add("#", " "));
 // countClaps("ClClClaClaClaClap!") ➞ 6
 // countClaps("CCClaClClap!Clap!ClClClap!") ➞ 9
 
-function countClaps(str) {
-    const matches = str.match("/Clap!/g") || [];
-    const count = matches.reduce((total, match) => total + match.length - 3, 0)
-    return count
-}
-
 console.log(countClaps("ClaClaClaClap!"));
 console.log(countClaps("ClClClaClaClaClap!"));
 console.log(countClaps("CCClaClClap!Clap!ClClClap!"));
 
-
+  
 // 48}
 
 function findIndex(arr, index) {
@@ -1021,10 +1018,13 @@ function findIndex(arr, index) {
     //     return -1
     // }
 
-    if (arr.includes(index)) {
-        return arr.indexOf(index)
-    }
-    return -1
+    // if (arr.includes(index)) {
+    //     return arr.indexOf(index)
+    // }
+    // return -1
+
+    return arr.indexOf(index)
+    // return arr.lastIndexOf(index)
 }
 
 console.log(findIndex(["hi", "edabit", "fgh", "abc"], "fgh"));
